@@ -1,0 +1,51 @@
+==================
+Objectives & Scope
+==================
+
+.. toctree::
+   :maxdepth: 2
+
+   blackGreyWhite/blackGreyWhite
+   rules/rules
+
+.. index::
+   single: Objectives & Scope
+   single: CyberSec; Objectives & Scope
+
+.. contents::
+    :depth: 3
+    :backlinks: top
+
+####
+
+----------------------------------------
+Agreement of the Objective and the Scope
+----------------------------------------
+
+    :Liens_Web:
+        * `Pentest Organisation`_
+
+.. _`Pentest Organisation`: http://www.pentest-standard.org/index.php/Main_Page
+
+Every penetration test begins with a formal written agreement with the client detailing its scope
+and objectives. This agreement is the legal authorisation for the penetration tester/ethical hacker
+to undertake actions which might otherwise constitute criminal offences.
+
+Broadly speaking, the purpose of the penetration test is to find possible security errors on the
+client’s corporate network or systems that could lead to unauthorized access, damage and/or data
+theft.
+
+Successful attacks can typically result from human error such as misconfigurations, unpatched
+services, obsolete firmware or operating systems as well as inherent weaknesses in the software
+applications used.
+
+In other words, a pen test seeks to identify security weaknesses in an organization’s
+network/systems before a hacker can exploit them.
+
+####
+
+--------
+Weblinks
+--------
+
+.. target-notes::

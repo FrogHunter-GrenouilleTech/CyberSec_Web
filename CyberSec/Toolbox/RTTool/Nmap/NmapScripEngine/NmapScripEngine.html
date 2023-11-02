@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="Cyber Security" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+        <title>Namp Script Engine (NSE) &mdash; Documentation Cyber Security </title>
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
+            <link rel="index" title="Index" href="../../../../../genindex.html" />
+            <link rel="search" title="Recherche" href="../../../../../search.html" />
+            <link rel="top" title="Documentation Cyber Security " href="#" />
+            <link rel="up" title="Nmap" href="../Nmap.html" />
+            <link rel="next" title="OSInt Tools" href="../../../OsintTools/OsintTools.html" />
+            <link rel="prev" title="Fingerprinting services and operating systems" href="../Fingerprint/Fingerprint.html" />
+    </head>
+<body>
+    <header class="container-fluid bg-primary">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="../../../../../index.html"
+                        title="logoGrenouilleTech"
+                        class="logo navbar-brand"
+                    >
+                        <img src="../../../../../_static/img/ColorLogoOpenHardware-noBackground.svg" width="500" height="400" alt="logoGrenouilleTech"
+                            class="logo-img"
+                        />
+                        Cyber Security
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../CyberSec.html">Cyber Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Distrib/Distrib.html">Cyber Security Distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Distrib/Kali/Kali.html">Kali</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Pentest/Pentest.html">The Pentest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Pentest/Scope/Scope.html">Objectives &amp; Scope</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Scope/blackGreyWhite/blackGreyWhite.html">Black, Grey &amp; White box penetration testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Scope/rules/rules.html">Rules of engagement &amp; Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Pentest/Enumeration/Enumeration.html">Enumeration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Enumeration/PassiveEnum/PassiveEnum.html">Passive information gathering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Enumeration/ActiveEnum/ActiveEnum.html">Active information gathering</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Pentest/Enumeration/ActiveEnum/NetEnum/NetEnum.html">Network Enumeration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Enumeration/OSINT/OSINT.html">OSInt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Pentest/Vulnerability/Vulnerability.html">Vulnerability, identification and assesment</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Pentest/Exploitation/Exploitation.html">Exploitation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/Exploit/Exploit.html">Exploit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html#weblinks">Weblinks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Toolbox.html">Toolbox</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../RTTool.html">Red Team Tools</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../Metasploit/Metasploit.html">Metasploit</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+</ul>
+</li>
+<li class="toctree-l4 current"><a class="reference internal" href="../Nmap.html">Nmap</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Namp Script Engine (NSE)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../OsintTools/OsintTools.html">OSInt Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../../../CyberSec.html">Cyber Security</a></li>
+            <li class="breadcrumb-item"><a href="../../../Toolbox.html">Toolbox</a></li>
+            <li class="breadcrumb-item"><a href="../../RTTool.html">Red Team Tools</a></li>
+            <li class="breadcrumb-item"><a href="../Nmap.html">Nmap</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Namp Script Engine (NSE)</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="ahd-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/Toolbox/RTTool/Nmap/NmapScripEngine/NmapScripEngine.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../../../../_sources/CyberSec/Toolbox/RTTool/Nmap/NmapScripEngine/NmapScripEngine.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main">
+<section id="namp-script-engine-nse">
+<h1><a class="toc-backref" href="#sommaire" role="doc-backlink">Namp Script Engine (NSE)</a><a class="headerlink" href="#namp-script-engine-nse" title="Lien permanent vers cette rubrique">¶</a></h1>
+<nav class="contents" id="sommaire">
+<span id="index-0"></span><p class="topic-title">Sommaire</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#namp-script-engine-nse" id="id7">Namp Script Engine (NSE)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#nse-presentation-and-operation" id="id8">NSE : Presentation and Operation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#locating-nmap-scripts" id="id9">Locating Nmap scripts</a></p></li>
+<li><p><a class="reference internal" href="#nmap-script-help" id="id10">Nmap script help</a></p></li>
+<li><p><a class="reference internal" href="#update-script-library-before-usage" id="id11">Update Script Library before usage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#nse-usage-and-examples" id="id12">NSE : Usage and Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#snmp" id="id13">SNMP</a></p></li>
+<li><p><a class="reference internal" href="#smb" id="id14">SMB</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#scan-vulnerabilities-with-nmap" id="id15">Scan Vulnerabilities With Nmap</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vuln" id="id16">VULN</a></p></li>
+<li><p><a class="reference internal" href="#vulners" id="id17">VULNERS</a></p></li>
+<li><p><a class="reference internal" href="#vulnscan" id="id18">Vulnscan</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#tips" id="id19">TIPS</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id20">Weblinks</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr class="docutils" />
+<section id="nse-presentation-and-operation">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">NSE : Presentation and Operation</a><a class="headerlink" href="#nse-presentation-and-operation" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>The Nmap Scripting Engine (NSE) is one of Nmap’s most powerful and flexible features. It allows
+users to write (and share) simple scripts to automate a wide variety of networking tasks. Those
+scripts are then executed in parallel with the speed and efficiency you expect from Nmap. Users can
+rely on the growing and diverse set of scripts distributed with Nmap, or write their own to meet
+custom needs.</p>
+<dl class="simple">
+<dt>some of the task allowed with NSE :</dt><dd><ul class="simple">
+<li><p>Network discovery</p></li>
+<li><p>Vulnerability detection</p></li>
+<li><p>Backdoor detection</p></li>
+<li><p>Vulnerability exploitation</p></li>
+</ul>
+</dd>
+</dl>
+<section id="locating-nmap-scripts">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Locating Nmap scripts</a><a class="headerlink" href="#locating-nmap-scripts" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Nmap scripts are located in the following directory:</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Script Location</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>/usr/share/nmap/scripts
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>the scripts are sorted according to protocol. It is possible to target scripts by keyword (ex: http,
+smb, ftp, drupal, wordpress, etc)</p>
+</section>
+<section id="nmap-script-help">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Nmap script help</a><a class="headerlink" href="#nmap-script-help" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Many scripts require different parameters and options to function correctly. Luckily most scripts
+have a help function and instructions can be printed to the terminal using <strong>–script-help</strong> (note
+the double hyphen before the word ‘script’) followed by the script name.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The ‘default’ category means that this script is used in the default script scan (when using
+<strong>-sC</strong> or <strong>–script</strong>).</p></li>
+<li><p>The ‘auth’ category tells us the script uses credentials to log on to the target system.</p></li>
+<li><p>The ‘safe’ category indicates the script is safe to use and is not designed to crash services
+or generate large amounts of network traffic.</p></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>When a script is not in the category safe but in the <strong>‘intrusive’ or ‘dos’</strong> category,
+extra caution should be exercised before executing the script.</p>
+</div>
+</div></blockquote>
+<p>The following example shows the command to get instructions on how to use the ftp-anon script.</p>
+<p>As you can see this script belongs to multiple categories: default, auth and safe.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Help exemple</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>--script-help<span class="w"> </span>ftp-anon
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/016-dnsenum-google-1.jpg"><img alt="../../../../../_images/016-dnsenum-google-1.jpg" class="align-center" src="../../../../../_images/016-dnsenum-google-1.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+<section id="update-script-library-before-usage">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Update Script Library before usage</a><a class="headerlink" href="#update-script-library-before-usage" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>The NSE comes with a large collection of scripts already included. Many of these scripts are created
+and maintained by security professionals who contribute to them as vulnerabilities and exploits
+evolve.</p>
+<p>Before you begin each session run the command &lt;nmap –script-updatedb&gt; (this requires &lt;sudo&gt; if
+you’re not in the root account).</p>
+<p>If you have added or removed NSE scripts from the default scripts directory, or changed the
+categories of any script, you have to update the Nmap script database.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>NSE Update</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>sudo<span class="w"> </span>nmap<span class="w"> </span>--script-updatedb
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/015-nmap-nse-update-00.jpg"><img alt="../../../../../_images/015-nmap-nse-update-00.jpg" class="align-center" src="../../../../../_images/015-nmap-nse-update-00.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="nse-usage-and-examples">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">NSE : Usage and Examples</a><a class="headerlink" href="#nse-usage-and-examples" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Liens_Web<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://nmap.org/book/nse-usage.html">Nmap Usage and Exemple</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Usage</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>--script<span class="o">=[</span>scriptname<span class="o">]</span><span class="w"> </span><span class="o">[</span>target<span class="w"> </span>host/IP<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<section id="snmp">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">SNMP</a><a class="headerlink" href="#snmp" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Arguments can be passed to Nmap scripts using the <strong>-–script-args</strong> option or from a file using the
+<strong>-–script-args-file</strong> option (Note the double hyphen before the argument names).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>SNMP</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>--script<span class="w"> </span>snmp-sysdescr<span class="w"> </span>--script-args<span class="w"> </span>creds.snmp<span class="o">=</span>admin<span class="w"> </span><span class="o">[</span>target<span class="w"> </span>host<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+<section id="smb">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">SMB</a><a class="headerlink" href="#smb" title="Lien permanent vers cette rubrique">¶</a></h3>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>smb-os-discovery</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">139</span>,445<span class="w"> </span>--script<span class="o">=</span>smb-os-discovery<span class="w"> </span><span class="o">[</span>target<span class="w"> </span>ip<span class="o">]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/031-smb-nmapscripts-02.jpg"><img alt="../../../../../_images/031-smb-nmapscripts-02.jpg" class="align-center" src="../../../../../_images/031-smb-nmapscripts-02.jpg" style="width: 500px;" /></a>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>smb-vuln</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">139</span>,445<span class="w"> </span>--script<span class="o">=</span>smb-vuln*<span class="w"> </span><span class="o">[</span>target<span class="w"> </span>ip<span class="o">]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/033-smb-nmapscripts-04.jpg"><img alt="../../../../../_images/033-smb-nmapscripts-04.jpg" class="align-center" src="../../../../../_images/033-smb-nmapscripts-04.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+<p>If you want to scan a target (or range) for a particular SMB vulnerability, for instance <strong>MS08-067</strong>
+(which allows remote code execution).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>MS08-067</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">139</span>,445<span class="w"> </span>--script<span class="o">=</span>smb-vuln-ms08-067<span class="w"> </span><span class="o">[</span>target<span class="w"> </span>ip<span class="o">]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/034-smb-nmapscripts-05.jpg"><img alt="../../../../../_images/034-smb-nmapscripts-05.jpg" class="align-center" src="../../../../../_images/034-smb-nmapscripts-05.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+<section id="ms17-010-eternalblue-script">
+<h4>MS17-010 Eternalblue script<a class="headerlink" href="#ms17-010-eternalblue-script" title="Lien permanent vers cette rubrique">¶</a></h4>
+<p><strong>Eternalblue</strong> is one of the exploits that was leaked by the Shadow Brokers group in April 2017. It
+exploits a critical vulnerability in the <strong>SMBv1 protocol</strong> and leaves a lot of Windows
+installations vulnerable to remote code execution, including Windows 7, 8, 8.1 and Windows
+Server 2003/2008/2012(R2)/2016.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>smb-vuln-ms17-010</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span><span class="o">[</span>target<span class="o">]</span><span class="w"> </span>--script<span class="o">=</span>smb-vuln-ms17-010
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/035-smb-nmapscripts-06.jpg"><img alt="../../../../../_images/035-smb-nmapscripts-06.jpg" class="align-center" src="../../../../../_images/035-smb-nmapscripts-06.jpg" style="width: 500px;" /></a>
+<p>The scan output indicates that the target is indeed vulnerable to the Eternalblue RCE
+vulnerability in <strong>SMBv1 (MS17-010)</strong>. This means that the Eternalblue vulnerability can be
+exploited to give us code execution with system privileges.</p>
+</div>
+</div></blockquote>
+<p>Sometimes it happens that a script is not available in your current Nmap installation, in this case
+the commands below result will be in an error.</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>wget Script</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>wget<span class="w"> </span>https://svn.nmap.org/nmap/scripts/smb-vuln-ms17-010.nse<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/smb-vuln-ms17-010.nse
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>Once the script has downloaded, use the command to update the Nmap script database so that the
+script will become available to Nmap.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>script-updatedb</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>--script-updatedb
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="scan-vulnerabilities-with-nmap">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Scan Vulnerabilities With Nmap</a><a class="headerlink" href="#scan-vulnerabilities-with-nmap" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Liens_Web<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://www.stationx.net/how-to-scan-vulnerabilities-with-nmap/">How to Scan Vulnerabilities With Nmap</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<section id="vuln">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">VULN</a><a class="headerlink" href="#vuln" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>This command will perform an enumeration for every Nmap Script to the target. It use the inner Data
+Base.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>VULN</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>--script<span class="w"> </span>vuln<span class="w"> </span><span class="o">[</span>Target<span class="o">]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/image8.jpg"><img alt="../../../../../_images/image8.jpg" class="align-center" src="../../../../../_images/image8.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+<section id="vulners">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">VULNERS</a><a class="headerlink" href="#vulners" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>To use this flag, you need to ensure that you use the <strong>-sV</strong> flag to have Nmap attempt to determine
+the version of the service running on each port. Otherwise, it’s executed in similar ways that you
+ran the <em>vuln</em> scan just a moment ago.</p>
+<p>The value of using the vulners script is that it pulls from the vulners.com database with over
+2 million security advisories and articles and 197 software vendors and other resources. And this
+list is frequently updated and expanded with an average time of 24 hours to publish and update
+exploits.</p>
+<p>Another advantage of the database is maintained on a regular basis is that this scan will often
+reveal information that some other scans might miss.</p>
+<p>There are two key reasons to consider the vulners flag to scan with: <strong>speed and accuracy</strong>. This
+script is very efficient and in we tend to see it run a scan in as little as 25% of the time as the
+vuln scan. Even with the relative quickness of the scan it still provides accurate and detailed
+results.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>VULNERS</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>Nmap<span class="w"> </span>-sV<span class="w"> </span>-–script<span class="w"> </span>vulners<span class="w"> </span>&lt;target&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/image2-2.jpg"><img alt="../../../../../_images/image2-2.jpg" class="align-center" src="../../../../../_images/image2-2.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+<section id="vulnscan">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Vulnscan</a><a class="headerlink" href="#vulnscan" title="Lien permanent vers cette rubrique">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Liens_Web<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/scipag/vulscan">Vulscan.NSE</a> <a class="footnote-reference brackets" href="#id5" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<p>This script extends the functionality of Nmap and pulls in vulnerability databases from several
+different sources, such as NVD, CVE, and OVAL, among others.</p>
+<p>One key benefit of vulscan over scripts such as vulners is that the vulnerability databases are
+downloaded on your device rather than called from online (as in vulners). <strong>This gives you the
+ability to run scans on a local network even when offline.</strong></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>vulscan</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="c1"># Please install the files into the following folder of your Nmap installation:</span>
+<span class="linenos">2</span><span class="w"> </span><span class="c1"># Nmap\scripts\vulscan\*</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/scipag/vulscan<span class="w"> </span>scipag_vulscan
+<span class="linenos">5</span><span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/scipag_vulscan<span class="w"> </span>/usr/share/nmap/scripts/vulscan
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/image3-2.jpg"><img alt="../../../../../_images/image3-2.jpg" class="align-center" src="../../../../../_images/image3-2.jpg" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+<section id="usage">
+<h4>Usage<a class="headerlink" href="#usage" title="Lien permanent vers cette rubrique">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Usage</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>--script<span class="o">=</span>vulscan/vulscan.nse<span class="w"> </span>www.example.com
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+<section id="update">
+<h4>Update<a class="headerlink" href="#update" title="Lien permanent vers cette rubrique">¶</a></h4>
+<p>To automatically update the databases, simply set execution permissions to the update.sh file and
+run it.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Update vulscan DB</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">744</span><span class="w"> </span>update.sh
+<span class="linenos">2</span><span class="w"> </span>./update.sh
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tips">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">TIPS</a><a class="headerlink" href="#tips" title="Lien permanent vers cette rubrique">¶</a></h2>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p><strong>Scan only for the script with a hight CVSS</strong></p>
+<p>Sometimes you may not want to know all vulnerabilities, such as those with low CVSS scores.</p>
+<p>In this case, you can use the flag <strong>-–script-args=mincvss=X.X</strong> to only show
+vulnerabilities with a certain score or higher.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>nmap<span class="w"> </span>-–script<span class="w"> </span>vuln<span class="w"> </span>–-script-args<span class="w"> </span><span class="nv">mincvss</span><span class="o">=</span><span class="m">7</span>.0<span class="w"> </span>&lt;target&gt;
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="weblinks">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Lien permanent vers cette rubrique">¶</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://nmap.org/book/nse-usage.html">https://nmap.org/book/nse-usage.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.stationx.net/how-to-scan-vulnerabilities-with-nmap/">https://www.stationx.net/how-to-scan-vulnerabilities-with-nmap/</a></p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://github.com/scipag/vulscan">https://github.com/scipag/vulscan</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="../Fingerprint/Fingerprint.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Fingerprinting services and operating systems
+    </a>
+    <a class="float-right" href="../../../OsintTools/OsintTools.html" title="Next">
+        OSInt Tools <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">Namp Script Engine (NSE)</a><ul>
+<li><a class="reference internal" href="#nse-presentation-and-operation">NSE : Presentation and Operation</a><ul>
+<li><a class="reference internal" href="#locating-nmap-scripts">Locating Nmap scripts</a></li>
+<li><a class="reference internal" href="#nmap-script-help">Nmap script help</a></li>
+<li><a class="reference internal" href="#update-script-library-before-usage">Update Script Library before usage</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nse-usage-and-examples">NSE : Usage and Examples</a><ul>
+<li><a class="reference internal" href="#snmp">SNMP</a></li>
+<li><a class="reference internal" href="#smb">SMB</a><ul>
+<li><a class="reference internal" href="#ms17-010-eternalblue-script">MS17-010 Eternalblue script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scan-vulnerabilities-with-nmap">Scan Vulnerabilities With Nmap</a><ul>
+<li><a class="reference internal" href="#vuln">VULN</a></li>
+<li><a class="reference internal" href="#vulners">VULNERS</a></li>
+<li><a class="reference internal" href="#vulnscan">Vulnscan</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#update">Update</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tips">TIPS</a></li>
+<li><a class="reference internal" href="#weblinks">Weblinks</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/ahdcreative/sphinx_ahd_theme" rel="nofollow" target="_blank">
+                        AHDCreative Sphinx Theme 5.3.8
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Poltergeist42
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/translations.js"></script>
+        <script type="text/javascript" src="../../../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            jQuery(function() { Search.loadIndex("../../../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>
