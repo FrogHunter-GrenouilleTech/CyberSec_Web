@@ -10,7 +10,7 @@
     <meta name="docsearch:release" content="" />
     <meta name="docsearch:version" content="" />
     
-        <title>ZAP (owasp) &mdash; Documentation Cyber Security </title>
+        <title>Reverse Shell &mdash; Documentation Cyber Security </title>
     
     <link rel="stylesheet" type="text/css" href="../../../_static/dist/fontawesome.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/dist/theme.css" />
@@ -19,8 +19,8 @@
             <link rel="search" title="Recherche" href="../../../search.html" />
             <link rel="top" title="Documentation Cyber Security " href="#" />
             <link rel="up" title="Toolbox" href="../Toolbox.html" />
-            <link rel="next" title="Powershell" href="../Powershell/Powershell.html" />
-            <link rel="prev" title="OSInt Tools" href="../OsintTools/OsintTools.html" />
+            <link rel="next" title="Hoaxshell" href="Hoaxshell/Hoaxshell.html" />
+            <link rel="prev" title="Python - Web server" href="../Python/pyWebServer/pyWebServer.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../OsintTools/OsintTools.html">OSInt Tools</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ZAP (owasp)</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Powershell/Powershell.html">Powershell</a><ul>
@@ -156,8 +156,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reverse Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../RTTool/RTTool.html">Red Team Tools</a></li>
@@ -192,7 +192,7 @@
         <li class="breadcrumb-item"><a href="../../../index.html">Docs</a></li>
             <li class="breadcrumb-item"><a href="../../CyberSec.html">Cyber Security</a></li>
             <li class="breadcrumb-item"><a href="../Toolbox.html">Toolbox</a></li>
-        <li class="breadcrumb-item active" aria-current="page">ZAP (owasp)</li>
+        <li class="breadcrumb-item active" aria-current="page">Reverse Shell</li>
     </ol>
 </nav>
                     </div>
@@ -204,11 +204,11 @@
                             <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
                             <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
                         </button>
-    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/Toolbox/Owasp_ZAP/Owasp_ZAP.rst" rel="nofollow">
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/Toolbox/ReverseShell/ReverseShell.rst" rel="nofollow">
         <span class="btn-icon"><span class="fab fa-github"></span></span>
         <span class="btn-text">Edit on GitHub</span>
     </a>
-    <a class="btn btn-sm btn-light text-decoration-none" href="../../../_sources/CyberSec/Toolbox/Owasp_ZAP/Owasp_ZAP.rst.txt" rel="nofollow">
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../../_sources/CyberSec/Toolbox/ReverseShell/ReverseShell.rst.txt" rel="nofollow">
         <span class="btn-icon"><span class="fas fa-code"></span></span>
         <span class="btn-text">View source</span>
     </a>
@@ -223,44 +223,77 @@
                 <div class="row">
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
                         <main role="main">
-<section id="zap-owasp">
-<span id="ref-owasp-zap"></span><h1><a class="toc-backref" href="#sommaire" role="doc-backlink">ZAP (owasp)</a><a class="headerlink" href="#zap-owasp" title="Lien permanent vers cette rubrique">¶</a></h1>
-<div class="toctree-wrapper compound" id="index-0">
-</div>
+<section id="reverse-shell">
+<span id="ref-reverseshell"></span><h1><a class="toc-backref" href="#sommaire" role="doc-backlink">Reverse Shell</a><a class="headerlink" href="#reverse-shell" title="Lien permanent vers cette rubrique">¶</a></h1>
 <nav class="contents" id="sommaire">
-<p class="topic-title">Sommaire</p>
+<span id="index-0"></span><p class="topic-title">Sommaire</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#zap-owasp" id="id5">ZAP (owasp)</a></p>
+<li><p><a class="reference internal" href="#reverse-shell" id="id5">Reverse Shell</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id6">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#how-to-stabilized-a-reverse-shell" id="id6">How to Stabilized a reverse shell ?</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id7">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Hoaxshell/Hoaxshell.html">Hoaxshell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Hoaxshell/Hoaxshell.html#weblinks">Weblinks</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <hr class="docutils" />
+<p>Reverse Shell</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Liens Web</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://2buntu.com/articles/1517/adding-ssl-certificates-from-owasp-zap-a-visual-walkthrough/">Adding SSL Certificates from OWASP ZAP</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://defaultcredentials.com/kali/how-to-setup-burp-suite-and-zap-with-foxyproxy-on-kali/">How To Setup BurpSuite and Zap With FoxyProxy on Kali</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">Reverse Shell Cheat Sheet</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
 </ul>
-</div></blockquote>
 </div>
 </div></blockquote>
+<section id="how-to-stabilized-a-reverse-shell">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">How to Stabilized a reverse shell ?</a><a class="headerlink" href="#how-to-stabilized-a-reverse-shell" title="Lien permanent vers cette rubrique">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/">Stabilizing the Shell</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command provide a clean shell but with :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>no tab completion</p></li>
+<li><p>no history</p></li>
+<li><p>no [CTRL]-c</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import pty; pty.spawn(&#39;/bin/bash&#39;)&quot;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
 <hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Lien permanent vers cette rubrique">¶</a></h2>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id1" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://defaultcredentials.com/kali/how-to-setup-burp-suite-and-zap-with-foxyproxy-on-kali/">https://defaultcredentials.com/kali/how-to-setup-burp-suite-and-zap-with-foxyproxy-on-kali/</a></p>
+<p><a class="reference external" href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a></p>
 </aside>
 <aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://2buntu.com/articles/1517/adding-ssl-certificates-from-owasp-zap-a-visual-walkthrough/">https://2buntu.com/articles/1517/adding-ssl-certificates-from-owasp-zap-a-visual-walkthrough/</a></p>
+<p><a class="reference external" href="https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/">https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/</a></p>
 </aside>
 </aside>
 </section>
@@ -268,11 +301,11 @@
 
 </main>
                         <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
-    <a class="float-left" href="../OsintTools/OsintTools.html" title="Previous">
-        <span aria-hidden="true">←&nbsp;</span>OSInt Tools
+    <a class="float-left" href="../Python/pyWebServer/pyWebServer.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Python - Web server
     </a>
-    <a class="float-right" href="../Powershell/Powershell.html" title="Next">
-        Powershell <span aria-hidden="true">&nbsp;→</span>
+    <a class="float-right" href="Hoaxshell/Hoaxshell.html" title="Next">
+        Hoaxshell <span aria-hidden="true">&nbsp;→</span>
     </a>
 </nav>
                     </div>
@@ -281,7 +314,8 @@
                         <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
-<li><a class="reference internal" href="#">ZAP (owasp)</a><ul>
+<li><a class="reference internal" href="#">Reverse Shell</a><ul>
+<li><a class="reference internal" href="#how-to-stabilized-a-reverse-shell">How to Stabilized a reverse shell ?</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>
