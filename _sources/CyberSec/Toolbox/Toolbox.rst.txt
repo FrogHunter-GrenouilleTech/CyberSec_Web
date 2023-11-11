@@ -15,6 +15,7 @@ Toolbox
    BurpSuite/BurpSuite
    Certutil/Certutil
    Gophish/Gophish
+   LDAPMonitor/LDAPMonitor
    Metasploit/Metasploit
    Netcat/Netcat
    Nmap/Nmap
