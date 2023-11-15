@@ -18,6 +18,9 @@
             <link rel="index" title="Index" href="../../../../../genindex.html" />
             <link rel="search" title="Recherche" href="../../../../../search.html" />
             <link rel="top" title="Documentation Cyber Security " href="#" />
+            <link rel="up" title="Server-Side Vulnerabilities" href="../serverSideVulnerabilities.html" />
+            <link rel="next" title="Server-side request forgery" href="../SSRF/SSRF.html" />
+            <link rel="prev" title="Authentication vulnerabilities" href="../AuthenticationVuln/AuthenticationVuln.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -57,8 +60,8 @@
 <script>document.getElementById('searchbox').style.display = "block"</script><div class="site-toc">
     <nav class="toc mt-3" aria-label="Main menu">
         <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../CyberSec.html">Cyber Security</a><ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../CyberSec.html">Cyber Security</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../../BlueTeam/BlueTeam.html">Blue Team</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a><ul class="simple">
@@ -102,13 +105,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../webSecurity.html">Web Security</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../webSecurity.html">Web Security</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../../../bugBountyVDS/bugBountyVDS.html">Bug Bounty &amp; Vulnerability Disclosur Program (VDS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../webSecurityAcademy.html">Web Security Academy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a><ul>
+<li class="toctree-l3 current"><a class="reference internal" href="../../webSecurityAcademy.html">Web Security Academy</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a><ul class="current">
 <li class="toctree-l5"><a class="reference internal" href="../pathTraversal/pathTraversal.html">Path Traversal</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../accessControl/accessControl.html">Access Control</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../SSRF/SSRF.html">Server-side request forgery</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 </ul>
@@ -123,6 +127,9 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Certutil/Certutil.html">Certutil.exe</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Gophish/Gophish.html">Gophish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Metasploit/Metasploit.html">Metasploit</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
@@ -141,11 +148,19 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/OsintTools/OsintTools.html">OSInt Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">Owasp ZAP</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Python/Python.html">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/RTTool/RTTool.html">Red Team Tools</a></li>
@@ -178,6 +193,10 @@
                         <nav aria-label="breadcrumb">
     <ol class="breadcrumb m-0 p-0 bg-transparent">
         <li class="breadcrumb-item"><a href="../../../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../../../CyberSec.html">Cyber Security</a></li>
+            <li class="breadcrumb-item"><a href="../../../webSecurity.html">Web Security</a></li>
+            <li class="breadcrumb-item"><a href="../../webSecurityAcademy.html">Web Security Academy</a></li>
+            <li class="breadcrumb-item"><a href="../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a></li>
         <li class="breadcrumb-item active" aria-current="page">OS command injection (AKA : shell injection)</li>
     </ol>
 </nav>
@@ -216,13 +235,87 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#os-command-injection-aka-shell-injection" id="id1">OS command injection (AKA : shell injection)</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id2">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#useful-commands" id="id2">Useful commands</a></p></li>
+<li><p><a class="reference internal" href="#insert-separator-argument-to-the-query" id="id3">Insert separator argument to the Query</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id4">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <hr class="docutils" />
-<p>[WIP]</p>
+<p><strong>OS command injection</strong> is also known as <strong>shell injection</strong>. It allows an attacker to execute
+operating system (OS) commands on the server that is running an application, and typically fully
+compromise the application and its data. Often, an attacker can leverage an OS command injection
+vulnerability to compromise other parts of the hosting infrastructure, and exploit trust
+relationships to pivot the attack to other systems within the organization.</p>
+<hr class="docutils" />
+<section id="useful-commands">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Useful commands</a><a class="headerlink" href="#useful-commands" title="Lien permanent vers cette rubrique">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Useful commands Linux and Windows</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Purpose of command</p></th>
+<th class="head"><p>Linux</p></th>
+<th class="head"><p>Windows</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name of current user</p></td>
+<td><p>whoami</p></td>
+<td><p>whoami</p></td>
+</tr>
+<tr class="row-odd"><td><p>Operating system</p></td>
+<td><p>uname -a</p></td>
+<td><p>ver</p></td>
+</tr>
+<tr class="row-even"><td><p>Network configuration</p></td>
+<td><p>ifconfig</p></td>
+<td><p>ipconfig /all</p></td>
+</tr>
+<tr class="row-odd"><td><p>Network connections</p></td>
+<td><p>netstat -an</p></td>
+<td><p>netstat -an</p></td>
+</tr>
+<tr class="row-even"><td><p>Running processes</p></td>
+<td><p>ps -ef</p></td>
+<td><p>tasklist</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="insert-separator-argument-to-the-query">
+<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Insert separator argument to the Query</a><a class="headerlink" href="#insert-separator-argument-to-the-query" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>To perform an OS Command Injection, we need to add a separator + the command we want to execute into
+the query.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>List of common separator</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1"># ampersand</span>
+<span class="linenos">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="c1"># pipe</span>
+<span class="linenos">3</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1"># semicolon</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For exemple in the url below,</p>
+<div class="highlight-url notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> https://insecure-website.com/stockStatus?productID=381&amp;storeID=29
+</pre></div>
+</div>
+<p>the query will be:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="nv">productID</span><span class="o">=</span><span class="m">381</span><span class="p">&amp;</span><span class="nv">storeID</span><span class="o">=</span><span class="m">29</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
 <hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Lien permanent vers cette rubrique">¶</a></h2>
@@ -230,7 +323,14 @@
 </section>
 
 </main>
-                        
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="../AuthenticationVuln/AuthenticationVuln.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Authentication vulnerabilities
+    </a>
+    <a class="float-right" href="../SSRF/SSRF.html" title="Next">
+        Server-side request forgery <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
                     </div>
                     
                     <nav class="col-12 col-lg-3 pb-4">
@@ -238,6 +338,8 @@
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
 <li><a class="reference internal" href="#">OS command injection (AKA : shell injection)</a><ul>
+<li><a class="reference internal" href="#useful-commands">Useful commands</a></li>
+<li><a class="reference internal" href="#insert-separator-argument-to-the-query">Insert separator argument to the Query</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>
