@@ -12,22 +12,29 @@ Toolbox
 .. toctree::
    :maxdepth: 2
 
+   BuiltwithTechProf/BuiltwithTechProf
    BurpSuite/BurpSuite
    Certutil/Certutil
+   CrossLinked/CrossLinked
+   DockerInUrl/DockerInUrl
    Gophish/Gophish
    LDAPMonitor/LDAPMonitor
    Metasploit/Metasploit
    Netcat/Netcat
    Nmap/Nmap
    OsintTools/OsintTools
+   OWASPPenTestKit/OWASPPenTestKit
    Owasp_ZAP/Owasp_ZAP
    Powershell/Powershell
    Python/Python
    ReverseShell/ReverseShell
    RTTool/RTTool
    SystemCmd/SystemCmd
+   TruffleHog/TruffleHog
    VBSript/VBSript
+   Whatruns/Whatruns
    wget/wget
+   YeswehackVDPFinder/YeswehackVDPFinder
 
 ####
 
