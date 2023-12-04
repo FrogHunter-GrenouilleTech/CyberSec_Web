@@ -20,7 +20,7 @@
             <link rel="top" title="Documentation Cyber Security " href="#" />
             <link rel="up" title="Cyber Security" href="../CyberSec.html" />
             <link rel="next" title="BurpSuite" href="BurpSuite/BurpSuite.html" />
-            <link rel="prev" title="File Upload Vulnerabilities" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html" />
+            <link rel="prev" title="SQL Injection" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -98,14 +98,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/PrivEsc/PrivEsc.html#weblinks">Weblinks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Ressources/Guides/Guides.html">Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Ressources/Blog/Blog.html">Blogs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
 </ul>
@@ -122,9 +125,10 @@
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/pathTraversal/pathTraversal.html">Path Traversal</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/accessControl/accessControl.html">Access Control</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SSRF/SSRF.html">Server-side request forgery</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection</a></li>
 </ul>
 </li>
 </ul>
@@ -169,12 +173,13 @@
 <li class="toctree-l4"><a class="reference internal" href="Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="PwnDoc/PwnDoc.html">PwnDoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Searchsploit/Searchsploit.html">Searchsploit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="SystemCmd/SystemCmd.html">System commands</a><ul class="simple">
 </ul>
 </li>
@@ -311,6 +316,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Powershell/Powershell.html#cheat-sheet-attack-active-directory">Cheat Sheet - Attack Active Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Powershell/Powershell.html#powershelltools">PowershellTools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Powershell/Powershell.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
@@ -319,8 +326,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Python.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PwnDoc/PwnDoc.html">PwnDoc</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PwnDoc/PwnDoc.html#weblinks">Weblinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PwnDocNg/PwnDocNg.html">PwnDoc-NG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PwnDocNg/PwnDocNg.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
@@ -331,6 +338,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="RTTool/RTTool.html">Red Team Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="RTTool/RTTool.html#weblinks">Weblinks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Searchsploit/Searchsploit.html">Searchsploit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Searchsploit/Searchsploit.html#update-before-usage">Update before usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Searchsploit/Searchsploit.html#exploit-storage">Exploit Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Searchsploit/Searchsploit.html#exemple">Exemple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Searchsploit/Searchsploit.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SystemCmd/SystemCmd.html">System commands</a><ul>
@@ -355,9 +369,9 @@
 </div>
 <hr class="docutils" />
 <p>There is a large quantity of tools for the cyber security. Some are for specific task only, some are
-usable for mulple task. Some dedicated for the offensive Team, some for the Defense Team and some
+usable for multiple task. Some dedicated for the offensive Team, some for the Defense Team and some
 are for both. In the same way, some of the tools are Free, some not and some a little bit of both.</p>
-<p>It is neccessary to stay alert for the new tools since a tool can be outdated at any time. There are
+<p>It is necessary to stay alert for the new tools since a tool can be outdated at any time. There are
 also some « must have » tools that we need to mastering.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Ressources<span class="colon">:</span></dt>
@@ -374,8 +388,8 @@ also some « must have » tools that we need to mastering.</p>
 
 </main>
                         <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
-    <a class="float-left" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html" title="Previous">
-        <span aria-hidden="true">←&nbsp;</span>File Upload Vulnerabilities
+    <a class="float-left" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>SQL Injection
     </a>
     <a class="float-right" href="BurpSuite/BurpSuite.html" title="Next">
         BurpSuite <span aria-hidden="true">&nbsp;→</span>

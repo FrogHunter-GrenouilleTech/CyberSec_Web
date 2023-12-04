@@ -20,7 +20,7 @@
             <link rel="top" title="Documentation Cyber Security " href="#" />
             <link rel="up" title="Toolbox" href="../Toolbox.html" />
             <link rel="next" title="PowerShell - File Transfert" href="psFileTransfert/psFileTransfert.html" />
-            <link rel="prev" title="Owasp ZAP" href="../Owasp_ZAP/Owasp_ZAP.html" />
+            <link rel="prev" title="OSInt Tools" href="../OsintTools/OsintTools.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -62,7 +62,16 @@
         <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../CyberSec.html">Cyber Security</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../Distrib/Distrib.html">Cyber Security Distribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../BlueTeam/BlueTeam.html">Blue Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Distrib/Kali/Kali.html">Kali</a></li>
 </ul>
 </li>
@@ -87,10 +96,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Pentest/Exploitation/Exploitation.html">Exploitation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/Exploit/Exploit.html">Exploit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PrivEsc.html#weblinks">Weblinks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/Guides/Guides.html">Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -102,6 +125,10 @@
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/pathTraversal/pathTraversal.html">Path Traversal</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/accessControl/accessControl.html">Access Control</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SSRF/SSRF.html">Server-side request forgery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection</a></li>
 </ul>
 </li>
 </ul>
@@ -113,34 +140,54 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Certutil/Certutil.html">Certutil.exe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CrossLinked/CrossLinked.html">CrossLinked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../DockerInUrl/DockerInUrl.html">Docker-Inurlbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Exegol/Exegol.html">Exegol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Gophish/Gophish.html">Gophish</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Netcat/Netcat.html">Netcat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../OsintTools/OsintTools.html">OSInt Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">Owasp ZAP</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../Metasploit/Metasploit.html">Metasploit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Netcat/Netcat.html">Netcat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Nmap/Nmap.html">Nmap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Nmap/Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Nmap/NmapScripEngine/NmapScripEngine.html">Namp Script Engine (NSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Nmap/outputData/outputData.html">Output Data to files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../OsintTools/OsintTools.html">OSInt Tools</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../RTTool/RTTool.html">Red Team Tools</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../RTTool/Metasploit/Metasploit.html">Metasploit</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Python/Python.html">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../RTTool/Nmap/Nmap.html">Nmap</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Nmap/Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Nmap/NmapScripEngine/NmapScripEngine.html">Namp Script Engine (NSE)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../RTTool/Nmap/outputData/outputData.html">Output Data to files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Searchsploit/Searchsploit.html">Searchsploit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SystemCmd/SystemCmd.html">System commands</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../VBSript/VBSript.html">VBSript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wget/wget.html">wget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -203,9 +250,20 @@
 <nav class="contents" id="sommaire">
 <span id="index-0"></span><p class="topic-title">Sommaire</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#powershell" id="id1">Powershell</a></p>
+<li><p><a class="reference internal" href="#powershell" id="id2">Powershell</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id2">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#cheat-sheet-attack-active-directory" id="id3">Cheat Sheet - Attack Active Directory</a></p></li>
+<li><p><a class="reference internal" href="#powershelltools" id="id4">PowershellTools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#convertfrom-objectsid" id="id5">ConvertFrom-ObjectSid</a></p></li>
+<li><p><a class="reference internal" href="#find-adinterestingacl" id="id6">Find-ADInterestingACL</a></p></li>
+<li><p><a class="reference internal" href="#find-file" id="id7">Find-File</a></p></li>
+<li><p><a class="reference internal" href="#get-nestedgroupmembership" id="id8">Get-NestedGroupMembership</a></p></li>
+<li><p><a class="reference internal" href="#get-trustticket" id="id9">Get-TrustTicket</a></p></li>
+<li><p><a class="reference internal" href="#set-macrosecurityoff" id="id10">Set-MacroSecurityOff</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#weblinks" id="id11">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
@@ -222,7 +280,72 @@
 </ul>
 </div>
 <hr class="docutils" />
-<p>[WIP]</p>
+<section id="cheat-sheet-attack-active-directory">
+<span id="index-1"></span><h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Cheat Sheet - Attack Active Directory</a><a class="headerlink" href="#cheat-sheet-attack-active-directory" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>This cheat sheet contains common enumeration and attack methods for Windows Active Directory with
+the use of powershell.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a href="#id12"><span class="problematic" id="id13">`Github`_</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+<section id="powershelltools">
+<span id="index-2"></span><h2><a class="toc-backref" href="#sommaire" role="doc-backlink">PowershellTools</a><a class="headerlink" href="#powershelltools" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Powershell Tools is a bunch of tools used for the Red Team and the Pentesting. It Help to exploit
+the Microsoft’s environment.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a href="#id14"><span class="problematic" id="id15">`Github`_</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+<section id="convertfrom-objectsid">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">ConvertFrom-ObjectSid</a><a class="headerlink" href="#convertfrom-objectsid" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Translates an Active Directory Security Identifier (SID) to the corresponding object name. The SID
+represents a security context for a user, group, or computer in an Active Directory environment.</p>
+</section>
+<section id="find-adinterestingacl">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Find-ADInterestingACL</a><a class="headerlink" href="#find-adinterestingacl" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Find-ADInterestingACL searches Active Directory objects and filters their Access Control Lists
+(ACLs) based on specified rights and identity parameters. It enumerates all AD objects, retrieves
+their ACLs, and then filters these ACLs to find specific permissions related to the provided
+identities.</p>
+</section>
+<section id="find-file">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Find-File</a><a class="headerlink" href="#find-file" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Performs a search for files that contain a specified string within their names. It supports
+searching on the local machine or a remote computer using either HTTP access or CIFS access. If
+searching on a remote computer, ensure that the appropriate access is available.</p>
+</section>
+<section id="get-nestedgroupmembership">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Get-NestedGroupMembership</a><a class="headerlink" href="#get-nestedgroupmembership" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Uses the Active Directory module to recursively retrieve nested group memberships for a specified
+user account. It starts by querying the direct group memberships and then recursively retrieves
+nested memberships.</p>
+</section>
+<section id="get-trustticket">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Get-TrustTicket</a><a class="headerlink" href="#get-trustticket" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>This script generates the command required for crafting inter-realm/referral TGTs and subsequent TGS
+for Mimikatz, Kekeo and Rubeus.</p>
+</section>
+<section id="set-macrosecurityoff">
+<h3><a class="toc-backref" href="#sommaire" role="doc-backlink">Set-MacroSecurityOff</a><a class="headerlink" href="#set-macrosecurityoff" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>The Set-MacroSecurityOff function disables macro security by modifying the registry. It checks if
+the specified registry key exists and, if present, sets the « level » value to 4, representing « No
+security check. » If the key does not exist, the user is prompted to find the correct key path using
+Set-MacroSecurityKeyOff -Key Key_Path. The current value is printed to the screen before changing to
+facilitate cleanup.</p>
+</section>
+</section>
 <hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Lien permanent vers cette rubrique">¶</a></h2>
@@ -231,8 +354,8 @@
 
 </main>
                         <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
-    <a class="float-left" href="../Owasp_ZAP/Owasp_ZAP.html" title="Previous">
-        <span aria-hidden="true">←&nbsp;</span>Owasp ZAP
+    <a class="float-left" href="../OsintTools/OsintTools.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>OSInt Tools
     </a>
     <a class="float-right" href="psFileTransfert/psFileTransfert.html" title="Next">
         PowerShell - File Transfert <span aria-hidden="true">&nbsp;→</span>
@@ -245,6 +368,16 @@
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
 <li><a class="reference internal" href="#">Powershell</a><ul>
+<li><a class="reference internal" href="#cheat-sheet-attack-active-directory">Cheat Sheet - Attack Active Directory</a></li>
+<li><a class="reference internal" href="#powershelltools">PowershellTools</a><ul>
+<li><a class="reference internal" href="#convertfrom-objectsid">ConvertFrom-ObjectSid</a></li>
+<li><a class="reference internal" href="#find-adinterestingacl">Find-ADInterestingACL</a></li>
+<li><a class="reference internal" href="#find-file">Find-File</a></li>
+<li><a class="reference internal" href="#get-nestedgroupmembership">Get-NestedGroupMembership</a></li>
+<li><a class="reference internal" href="#get-trustticket">Get-TrustTicket</a></li>
+<li><a class="reference internal" href="#set-macrosecurityoff">Set-MacroSecurityOff</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>

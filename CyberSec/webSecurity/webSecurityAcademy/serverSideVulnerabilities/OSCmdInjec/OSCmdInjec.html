@@ -19,8 +19,8 @@
             <link rel="search" title="Recherche" href="../../../../../search.html" />
             <link rel="top" title="Documentation Cyber Security " href="#" />
             <link rel="up" title="Server-Side Vulnerabilities" href="../serverSideVulnerabilities.html" />
-            <link rel="next" title="Server-side request forgery" href="../SSRF/SSRF.html" />
-            <link rel="prev" title="Authentication vulnerabilities" href="../AuthenticationVuln/AuthenticationVuln.html" />
+            <link rel="next" title="SQL Injection" href="../SQLInjection/SQLInjection.html" />
+            <link rel="prev" title="File Upload Vulnerabilities" href="../fileUploadVuln/fileUploadVuln.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -71,7 +71,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Distrib/Distrib.html">Cyber Security Distribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Distrib/Kali/Kali.html">Kali</a></li>
 </ul>
 </li>
@@ -98,9 +98,22 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html#weblinks">Weblinks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Ressources/Guides/Guides.html">Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -112,9 +125,10 @@
 <li class="toctree-l5"><a class="reference internal" href="../pathTraversal/pathTraversal.html">Path Traversal</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../accessControl/accessControl.html">Access Control</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
-<li class="toctree-l5 current"><a class="current reference internal" href="#">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../SSRF/SSRF.html">Server-side request forgery</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../SQLInjection/SQLInjection.html">SQL Injection</a></li>
 </ul>
 </li>
 </ul>
@@ -126,6 +140,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Certutil/Certutil.html">Certutil.exe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/CrossLinked/CrossLinked.html">CrossLinked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/DockerInUrl/DockerInUrl.html">Docker-Inurlbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Exegol/Exegol.html">Exegol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Gophish/Gophish.html">Gophish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
 </ul>
@@ -148,9 +165,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/OsintTools/OsintTools.html">OSInt Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
 </ul>
@@ -159,6 +173,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
 </ul>
@@ -169,6 +184,9 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/VBSript/VBSript.html">VBSript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/wget/wget.html">wget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -313,6 +331,25 @@ the query.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="nv">productID</span><span class="o">=</span><span class="m">381</span><span class="p">&amp;</span><span class="nv">storeID</span><span class="o">=</span><span class="m">29</span>
 </pre></div>
 </div>
+<p>the two elements are separate by an ampersand (&amp;)</p>
+</div>
+</div></blockquote>
+<p>Placing the additional command separator <strong>[&amp; | ;]</strong> after the injected command is useful because it
+separates the injected command from whatever follows the injection point. This reduces the chance
+that what follows will prevent the injected command from executing.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>OS Command Insertnjection</strong></p>
+<p>Request:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="err"> productID=381&amp;storeID=29;whoami</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../../../_images/osCmdInjection.png"><img alt="../../../../../_images/osCmdInjection.png" class="align-center" src="../../../../../_images/osCmdInjection.png" style="width: 500px;" /></a>
+<p>Response:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="err"> peter-enaYKV</span>
+</pre></div>
+</div>
 </div>
 </div></blockquote>
 </section>
@@ -324,11 +361,11 @@ the query.</p>
 
 </main>
                         <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
-    <a class="float-left" href="../AuthenticationVuln/AuthenticationVuln.html" title="Previous">
-        <span aria-hidden="true">←&nbsp;</span>Authentication vulnerabilities
+    <a class="float-left" href="../fileUploadVuln/fileUploadVuln.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>File Upload Vulnerabilities
     </a>
-    <a class="float-right" href="../SSRF/SSRF.html" title="Next">
-        Server-side request forgery <span aria-hidden="true">&nbsp;→</span>
+    <a class="float-right" href="../SQLInjection/SQLInjection.html" title="Next">
+        SQL Injection <span aria-hidden="true">&nbsp;→</span>
     </a>
 </nav>
                     </div>
