@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="Cyber Security" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+        <title>Scenario &mdash; Cyber Security  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+            <link rel="index" title="Index" href="../../../genindex.html" />
+            <link rel="search" title="Search" href="../../../search.html" />
+            <link rel="top" title="Cyber Security  documentation" href="#" />
+            <link rel="up" title="Phishing" href="../Phishing.html" />
+            <link rel="next" title="Ressources" href="../../Ressources/Ressources.html" />
+            <link rel="prev" title="Phishing" href="../Phishing.html" />
+    </head>
+<body>
+    <header class="container-fluid bg-primary">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="../../../index.html"
+                        title="logoGrenouilleTech"
+                        class="logo navbar-brand"
+                    >
+                        <img src="../../../_static/img/ColorLogoOpenHardware-noBackground.svg" width="500" height="400" alt="logoGrenouilleTech"
+                            class="logo-img"
+                        />
+                        Cyber Security
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../CyberSec.html">Cyber Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../BlueTeam/BlueTeam.html">Blue Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Distrib/Kali/Kali.html">Kali</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Hardware/Hardware.html">Hardware</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pentest/Pentest.html">The Pentest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Pentest/Scope/Scope.html">Objectives &amp; Scope</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Scope/blackGreyWhite/blackGreyWhite.html">Black, Grey &amp; White box penetration testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Scope/rules/rules.html">Rules of engagement &amp; Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Pentest/Enumeration/Enumeration.html">Enumeration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Enumeration/PassiveEnum/PassiveEnum.html">Passive information gathering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Enumeration/ActiveEnum/ActiveEnum.html">Active information gathering</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Pentest/Enumeration/ActiveEnum/NetEnum/NetEnum.html">Network Enumeration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Enumeration/OSINT/OSINT.html">OSInt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Pentest/Vulnerability/Vulnerability.html">Vulnerability, identification and assesment</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Pentest/Exploitation/Exploitation.html">Exploitation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/Exploit/Exploit.html">Exploit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Phishing.html">Phishing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scenario</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/Guides/Guides.html">Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../webSecurity/webSecurity.html">Web Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../webSecurity/bugBountyVDS/bugBountyVDS.html">Bug Bounty &amp; Vulnerability Disclosur Program (VDS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/webSecurityAcademy.html">Web Security Academy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/serverSideVulnerabilities.html">Server-Side Vulnerabilities</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/pathTraversal/pathTraversal.html">Path Traversal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/accessControl/accessControl.html">Access Control</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SSRF/SSRF.html">Server-Side Request Forgery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Toolbox/Toolbox.html">Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/BurpSuite/BurpSuite.html">BurpSuite</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Certutil/Certutil.html">Certutil.exe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/CrossLinked/CrossLinked.html">CrossLinked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/DockerInUrl/DockerInUrl.html">Docker-Inurlbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Exegol/Exegol.html">Exegol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Gophish/Gophish.html">Gophish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Metasploit/Metasploit.html">Metasploit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Netcat/Netcat.html">Netcat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Nmap/Nmap.html">Nmap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Nmap/Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Nmap/NmapScripEngine/NmapScripEngine.html">Namp Script Engine (NSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Nmap/outputData/outputData.html">Output Data to files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Powershell/Powershell.html">Powershell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Python/Python.html">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Toolbox/ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Searchsploit/Searchsploit.html">Searchsploit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/SystemCmd/SystemCmd.html">System commands</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/VBSript/VBSript.html">VBSript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/wget/wget.html">wget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../CyberSec.html">Cyber Security</a></li>
+            <li class="breadcrumb-item"><a href="../Phishing.html">Phishing</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Scenario</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="ahd-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/Phishing/Scenario/Scenario.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../../_sources/CyberSec/Phishing/Scenario/Scenario.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main">
+<section id="scenario">
+<h1><a class="toc-backref" href="#contents" role="doc-backlink">Scenario</a><a class="headerlink" href="#scenario" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
+<span id="index-0"></span><p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#scenario" id="id9">Scenario</a></p>
+<ul>
+<li><p><a class="reference internal" href="#scenarios-for-a-french-campaign" id="id10">Scenarios for a French campaign</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sc-1-formation-professionnelle" id="id11">SC-1 : Formation professionnelle</a></p></li>
+<li><p><a class="reference internal" href="#sc-2-nouvelle-politique-d-entreprise" id="id12">SC-2 : Nouvelle politique d’entreprise</a></p></li>
+<li><p><a class="reference internal" href="#sc-3-enquete-sur-le-bien-etre-au-travail" id="id13">SC-3 : Enquête sur le bien-être au travail</a></p></li>
+<li><p><a class="reference internal" href="#sc-4-evenement-d-entreprise-exclusif" id="id14">SC-4 : Événement d’entreprise exclusif</a></p></li>
+<li><p><a class="reference internal" href="#sc-5-nouvelle-technologie-au-travail" id="id15">SC-5 : Nouvelle technologie au travail</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#weblinks" id="id16">Weblinks</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr class="docutils" />
+<section id="scenarios-for-a-french-campaign">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Scenarios for a French campaign</a><a class="headerlink" href="#scenarios-for-a-french-campaign" title="Permalink to this heading">¶</a></h2>
+<p>Here are some French scenarios generated trough Chat GPT. These scenarios were designed to be
+non-anxiogenic and non-alarmist. They are defined for a group of users and not by individual users.</p>
+<section id="sc-1-formation-professionnelle">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">SC-1 : Formation professionnelle</a><a class="headerlink" href="#sc-1-formation-professionnelle" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Sujet du courriel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“Opportunité de Formation Exclusive pour Votre Développement Professionnel”</p>
+</dd>
+<dt class="field-even">Message<span class="colon">:</span></dt>
+<dd class="field-even"><p>Prétendre offrir une formation exclusive ou une opportunité de développement
+professionnel.</p>
+</dd>
+</dl>
+</div></blockquote>
+<section id="objectifs-avantages-et-inconvenients">
+<h4>Objectifs, Avantages et Inconvénients<a class="headerlink" href="#objectifs-avantages-et-inconvenients" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Objectif<span class="colon">:</span></dt>
+<dd class="field-odd"><p>L’objectif est d’inciter les employés à cliquer sur un lien prétendument lié à une
+opportunité de formation exclusive.</p>
+</dd>
+<dt class="field-even">Avantages<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Suscite l’intérêt des employés pour le développement professionnel.</p></li>
+<li><p>Renforce l’idée que l’entreprise investit dans la croissance de ses employés.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Inconvénients<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Peut créer une fausse attente parmi les employés.</p></li>
+<li><p>Risque de compromettre la confiance si l’objectif n’est pas clairement expliqué après
+la campagne.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="message-exemple">
+<h4>Message Exemple<a class="headerlink" href="#message-exemple" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cher(e) [Nom de l’employé],</p>
+<p>Nous sommes heureux de vous annoncer une opportunité de formation exclusive chez
+<strong>[Nom de l’entreprise]</strong> ! Cette formation est spécialement conçue pour renforcer vos
+compétences et accélérer votre développement professionnel.</p>
+<blockquote>
+<div><p>📚 <strong>Sujet</strong> : Les dernières tendances de l’industrie</p>
+<p>📅 <strong>Date</strong> : [Date de la formation]</p>
+<p>⌚ <strong>Heure</strong> : [Heure de début]</p>
+</div></blockquote>
+<p>Pour confirmer votre participation et en savoir plus sur cette opportunité, veuillez cliquer
+sur le lien ci-dessous :</p>
+<blockquote>
+<div><p>[lien-malveillant]</p>
+</div></blockquote>
+<p>Nous sommes impatients de vous voir exceller dans votre carrière grâce à cette formation
+unique.</p>
+<p>Cordialement,</p>
+<p>[Prénom Nom]</p>
+<p>[Poste]</p>
+<p>[Coordonnées de contact]</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sc-2-nouvelle-politique-d-entreprise">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">SC-2 : Nouvelle politique d’entreprise</a><a class="headerlink" href="#sc-2-nouvelle-politique-d-entreprise" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Sujet du courriel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“Annonce de la Nouvelle Politique d’Entreprise - Votre Avis Compte !”</p>
+</dd>
+<dt class="field-even">Message<span class="colon">:</span></dt>
+<dd class="field-even"><p>Faire croire à une nouvelle politique interne, encourageant les employés</p>
+</dd>
+</dl>
+</div></blockquote>
+<section id="id1">
+<h4>Objectifs, Avantages et Inconvénients<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Objectif<span class="colon">:</span></dt>
+<dd class="field-odd"><p>L’objectif est d’inciter les employés à cliquer sur un lien prétendument lié à une
+nouvelle politique d’entreprise.</p>
+</dd>
+<dt class="field-even">Avantages<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Capte l’attention des employés concernant les changements organisationnels.</p></li>
+<li><p>Renforce la communication interne.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Inconvénients<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Peut créer de l’anxiété parmi les employés.</p></li>
+<li><p>Risque de confusion si la nouvelle politique n’est pas explicitée après la campagne.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id2">
+<h4>Message Exemple<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cher(e) [Nom de l’employé],</p>
+<p>Nous avons le plaisir de vous informer que <strong>[Nom de l’entreprise]</strong> a élaboré une nouvelle
+politique d’entreprise pour améliorer notre environnement de travail. Nous aimerions
+connaître votre opinion et vos suggestions !</p>
+<blockquote>
+<div><p>📋 Nouvelle politique : [Nom de la politique]</p>
+<p>💡 Votre avis compte : [Lien vers le sondage]</p>
+</div></blockquote>
+<p>Participez à la construction de l’avenir de notre entreprise en donnant votre avis. Cliquez
+sur le lien ci-dessus pour accéder au sondage et contribuer à façonner notre culture
+d’entreprise.</p>
+<p>Merci pour votre implication !</p>
+<p>Cordialement,</p>
+<p>[Prénom Nom]</p>
+<p>[Poste]</p>
+<p>[Coordonnées de contact]</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sc-3-enquete-sur-le-bien-etre-au-travail">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">SC-3 : Enquête sur le bien-être au travail</a><a class="headerlink" href="#sc-3-enquete-sur-le-bien-etre-au-travail" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Sujet du courriel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“Participez à notre Enquête sur le Bien-être au Travail et Gagnez des Récompenses !”</p>
+</dd>
+<dt class="field-even">Message<span class="colon">:</span></dt>
+<dd class="field-even"><p>Inviter les employés à participer à une enquête sur le bien-être au travail avec la
+promesse de récompenses.</p>
+</dd>
+</dl>
+</div></blockquote>
+<section id="id3">
+<h4>Objectifs, Avantages et Inconvénients<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Objectif<span class="colon">:</span></dt>
+<dd class="field-odd"><p>L’objectif est d’inciter les employés à participer à une fausse enquête sur le bien-être
+au travail.</p>
+</dd>
+<dt class="field-even">Avantages<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Met en lumière l’importance du bien-être des employés.</p></li>
+<li><p>Encourage la participation et l’interaction des employés.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Inconvénients<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Peut créer de la méfiance si l’employé découvre que c’était une simulation.</p></li>
+<li><p>Risque de réduction de la participation réelle à des enquêtes.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id4">
+<h4>Message Exemple<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cher(e) [Nom de l’employé],</p>
+<p>Le bien-être de nos employés est une priorité chez <strong>[Nom de l’entreprise]</strong>. Participez à
+notre enquête sur le bien-être au travail et vous pourriez gagner des récompenses
+exclusives !</p>
+<blockquote>
+<div><p>🏆 Récompenses : [Liste des récompenses]</p>
+<p>📊 Enquête : [Lien vers l’enquête]</p>
+</div></blockquote>
+<p>Votre opinion est essentielle pour créer un environnement de travail optimal. Cliquez sur le
+lien ci-dessus pour accéder à l’enquête et avoir une chance de remporter des récompenses
+exceptionnelles.Merci de contribuer au bien-être de notre équipe !</p>
+<p>Cordialement,</p>
+<p>[Prénom Nom]</p>
+<p>[Poste]</p>
+<p>[Coordonnées de contact]</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sc-4-evenement-d-entreprise-exclusif">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">SC-4 : Événement d’entreprise exclusif</a><a class="headerlink" href="#sc-4-evenement-d-entreprise-exclusif" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Sujet du courriel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“Invitation Exclusive : Événement Spécial pour Notre Équipe”</p>
+</dd>
+<dt class="field-even">Message<span class="colon">:</span></dt>
+<dd class="field-even"><p>Faire croire à une invitation exclusive pour un événement spécial de l’entreprise.</p>
+</dd>
+</dl>
+</div></blockquote>
+<section id="id5">
+<h4>Objectifs, Avantages et Inconvénients<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Objectif<span class="colon">:</span></dt>
+<dd class="field-odd"><p>L’objectif est d’inciter les employés à cliquer sur un lien prétendument lié à une
+invitation exclusive à un événement d’entreprise.</p>
+</dd>
+<dt class="field-even">Avantages<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Capitalise sur le désir naturel de participation à des événements exclusifs.</p></li>
+<li><p>Favorise le sentiment d’appartenance à l’entreprise.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Inconvénients<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Peut créer de la frustration si les employés découvrent que c’était une simulation.</p></li>
+<li><p>Risque de diminution de l’enthousiasme pour les futures invitations.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id6">
+<h4>Message Exemple<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cher(e) [Nom de l’employé],</p>
+<p>C’est avec une grande excitation que nous vous invitons à notre soirée VIP exclusive en
+l’honneur de notre équipe exceptionnelle chez <strong>[Nom de l’entreprise]</strong> ! Préparez-vous à
+une expérience inoubliable de networking, divertissement et célébration.</p>
+<blockquote>
+<div><p>🎉 Événement : Soirée VIP</p>
+<p>📅 Date : [Date de l’événement]</p>
+<p>⌚ Heure : [Heure de début]</p>
+</div></blockquote>
+<p>Dress code : Élégance décontractée</p>
+<p>Pour confirmer votre présence et accéder à plus de détails sur l’événement, veuillez cliquer sur le lien ci-dessous :</p>
+<blockquote>
+<div><p>[lien-malveillant]</p>
+</div></blockquote>
+<p>Nous sommes impatients de partager ce moment unique avec vous. Réservez votre place dès maintenant !</p>
+<p>Cordialement,</p>
+<p>[Prénom Nom]</p>
+<p>[Poste]</p>
+<p>[Coordonnées de contact]</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sc-5-nouvelle-technologie-au-travail">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">SC-5 : Nouvelle technologie au travail</a><a class="headerlink" href="#sc-5-nouvelle-technologie-au-travail" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Sujet du courriel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“Découvrez la Dernière Technologie qui Révolutionnera Votre Façon de Travailler !”</p>
+</dd>
+<dt class="field-even">Message<span class="colon">:</span></dt>
+<dd class="field-even"><p>Annoncer une nouvelle technologie ou un outil révolutionnaire, incitant les employés à en savoir plus en cliquant sur le lien.</p>
+</dd>
+</dl>
+</div></blockquote>
+<section id="id7">
+<h4>Objectifs, Avantages et Inconvénients<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Objectif<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>L’objectif est d’inciter les employés à cliquer sur un lien prétendument lié à une
+nouvelle technologie au travail.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Avantages<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>S’aligne sur l’intérêt des employés pour les nouvelles technologies.</p></li>
+<li><p>Souligne l’engagement de l’entreprise envers l’innovation.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Inconvénients<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Risque de créer de la confusion ou de l’anticipation si l’objectif n’est pas clair après
+la campagne.</p></li>
+<li><p>Possibilité de scepticisme accru envers les futures annonces de nouvelles technologies.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id8">
+<h4>Message Exemple<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cher(e) [Nom de l’employé],</p>
+<p>Exciting news! Nous sommes ravis de vous présenter la dernière technologie qui transformera
+votre manière de travailler chez <strong>[Nom de l’entreprise]</strong>.</p>
+<blockquote>
+<div><p>🚀 Innovation : [Nom de la technologie]</p>
+<p>📅 Présentation : [Date et heure de la présentation]</p>
+<p>📍 Lieu : [Lieu de la présentation]</p>
+</div></blockquote>
+<p>Soyez parmi les premiers à découvrir cette technologie révolutionnaire. Cliquez sur le lien
+ci-dessous pour en savoir plus et confirmer votre présence à l’événement de présentation.</p>
+<blockquote>
+<div><p>[lien-malveillant]</p>
+</div></blockquote>
+<p>Nous sommes impatients de partager cette innovation avec vous !</p>
+<p>Cordialement,</p>
+<p>[Prénom Nom]</p>
+<p>[Poste]</p>
+<p>[Coordonnées de contact]</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="weblinks">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="../Phishing.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Phishing
+    </a>
+    <a class="float-right" href="../../Ressources/Ressources.html" title="Next">
+        Ressources <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">Scenario</a><ul>
+<li><a class="reference internal" href="#scenarios-for-a-french-campaign">Scenarios for a French campaign</a><ul>
+<li><a class="reference internal" href="#sc-1-formation-professionnelle">SC-1 : Formation professionnelle</a><ul>
+<li><a class="reference internal" href="#objectifs-avantages-et-inconvenients">Objectifs, Avantages et Inconvénients</a></li>
+<li><a class="reference internal" href="#message-exemple">Message Exemple</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sc-2-nouvelle-politique-d-entreprise">SC-2 : Nouvelle politique d’entreprise</a><ul>
+<li><a class="reference internal" href="#id1">Objectifs, Avantages et Inconvénients</a></li>
+<li><a class="reference internal" href="#id2">Message Exemple</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sc-3-enquete-sur-le-bien-etre-au-travail">SC-3 : Enquête sur le bien-être au travail</a><ul>
+<li><a class="reference internal" href="#id3">Objectifs, Avantages et Inconvénients</a></li>
+<li><a class="reference internal" href="#id4">Message Exemple</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sc-4-evenement-d-entreprise-exclusif">SC-4 : Événement d’entreprise exclusif</a><ul>
+<li><a class="reference internal" href="#id5">Objectifs, Avantages et Inconvénients</a></li>
+<li><a class="reference internal" href="#id6">Message Exemple</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sc-5-nouvelle-technologie-au-travail">SC-5 : Nouvelle technologie au travail</a><ul>
+<li><a class="reference internal" href="#id7">Objectifs, Avantages et Inconvénients</a></li>
+<li><a class="reference internal" href="#id8">Message Exemple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#weblinks">Weblinks</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/ahdcreative/sphinx_ahd_theme" rel="nofollow" target="_blank">
+                        AHDCreative Sphinx Theme 5.3.8
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Poltergeist42
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script type="text/javascript" src="../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            jQuery(function() { Search.loadIndex("../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>

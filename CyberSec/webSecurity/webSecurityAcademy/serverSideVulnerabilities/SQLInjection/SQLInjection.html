@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
         <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
@@ -10,14 +10,14 @@
     <meta name="docsearch:release" content="" />
     <meta name="docsearch:version" content="" />
     
-        <title>SQL Injection &mdash; Documentation Cyber Security </title>
+        <title>SQL Injection (SQLi) &mdash; Cyber Security  documentation</title>
     
     <link rel="stylesheet" type="text/css" href="../../../../../_static/dist/fontawesome.css" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/dist/theme.css" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
             <link rel="index" title="Index" href="../../../../../genindex.html" />
-            <link rel="search" title="Recherche" href="../../../../../search.html" />
-            <link rel="top" title="Documentation Cyber Security " href="#" />
+            <link rel="search" title="Search" href="../../../../../search.html" />
+            <link rel="top" title="Cyber Security  documentation" href="#" />
             <link rel="up" title="Server-Side Vulnerabilities" href="../serverSideVulnerabilities.html" />
             <link rel="next" title="Toolbox" href="../../../../Toolbox/Toolbox.html" />
             <link rel="prev" title="OS command injection (AKA : shell injection)" href="../OSCmdInjec/OSCmdInjec.html" />
@@ -49,7 +49,7 @@
             <aside class="col-12 col-lg-3 sidebar-container">
                 <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
@@ -73,6 +73,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Distrib/Kali/Kali.html">Kali</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Hardware/Hardware.html">Hardware</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Pentest/Pentest.html">The Pentest</a><ul>
@@ -107,6 +110,10 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Phishing/Phishing.html">Phishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Phishing/Scenario/Scenario.html">Scenario</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Ressources/Ressources.html">Ressources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Ressources/Guides/Guides.html">Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Ressources/Blog/Blog.html">Blogs</a><ul>
@@ -125,10 +132,10 @@
 <li class="toctree-l5"><a class="reference internal" href="../pathTraversal/pathTraversal.html">Path Traversal</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../accessControl/accessControl.html">Access Control</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../SSRF/SSRF.html">Server-side request forgery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../SSRF/SSRF.html">Server-Side Request Forgery</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
-<li class="toctree-l5 current"><a class="current reference internal" href="#">SQL Injection</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">SQL Injection (SQLi)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,6 +186,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Searchsploit/Searchsploit.html">Searchsploit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/SystemCmd/SystemCmd.html">System commands</a><ul class="simple">
 </ul>
 </li>
@@ -215,7 +223,7 @@
             <li class="breadcrumb-item"><a href="../../../webSecurity.html">Web Security</a></li>
             <li class="breadcrumb-item"><a href="../../webSecurityAcademy.html">Web Security Academy</a></li>
             <li class="breadcrumb-item"><a href="../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a></li>
-        <li class="breadcrumb-item active" aria-current="page">SQL Injection</li>
+        <li class="breadcrumb-item active" aria-current="page">SQL Injection (SQLi)</li>
     </ol>
 </nav>
                     </div>
@@ -246,23 +254,124 @@
                 <div class="row">
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
                         <main role="main">
-<section id="sql-injection">
-<span id="ref-sqli"></span><h1><a class="toc-backref" href="#sommaire" role="doc-backlink">SQL Injection</a><a class="headerlink" href="#sql-injection" title="Lien permanent vers cette rubrique">¶</a></h1>
-<nav class="contents" id="sommaire">
-<span id="index-0"></span><p class="topic-title">Sommaire</p>
+<section id="sql-injection-sqli">
+<span id="ref-sqli"></span><h1><a class="toc-backref" href="#contents" role="doc-backlink">SQL Injection (SQLi)</a><a class="headerlink" href="#sql-injection-sqli" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
+<span id="index-0"></span><p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#sql-injection" id="id1">SQL Injection</a></p>
+<li><p><a class="reference internal" href="#sql-injection-sqli" id="id1">SQL Injection (SQLi)</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id2">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#what-is-sql-injection-sqli" id="id2">What is SQL injection (SQLi)?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-detect-sql-injection-vulnerabilities" id="id3">How to detect SQL injection vulnerabilities</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-hidden-data" id="id4">Retrieving hidden data</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id5">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <hr class="docutils" />
-<p>[WIP]</p>
+<section id="what-is-sql-injection-sqli">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">What is SQL injection (SQLi)?</a><a class="headerlink" href="#what-is-sql-injection-sqli" title="Permalink to this heading">¶</a></h2>
+<p>SQL injection (SQLi) is a web security vulnerability that allows an attacker to interfere with the
+queries that an application makes to its database. This can allow an attacker to view data that they
+are not normally able to retrieve. This might include data that belongs to other users, or any other
+data that the application can access. In many cases, an attacker can modify or delete this data,
+causing persistent changes to the application’s content or behavior.</p>
+<p>In some situations, an attacker can escalate a SQL injection attack to compromise the underlying
+server or other back-end infrastructure. It can also enable them to perform denial-of-service
+attacks.</p>
+</section>
+<hr class="docutils" />
+<section id="how-to-detect-sql-injection-vulnerabilities">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">How to detect SQL injection vulnerabilities</a><a class="headerlink" href="#how-to-detect-sql-injection-vulnerabilities" title="Permalink to this heading">¶</a></h2>
+<p>You can detect SQL injection manually using a systematic set of tests against every entry point in
+the application. To do this, you would typically submit:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The single quote character <strong>'</strong> and look for errors or other anomalies.</p></li>
+<li><p>Some SQL-specific syntax that evaluates to the base (original) value of the entry point, and
+to a different value, and look for systematic differences in the application responses.</p></li>
+<li><p>Boolean conditions such as <strong>OR 1=1</strong> and <strong>OR 1=2</strong>, and look for differences in the
+application’s responses.</p></li>
+<li><p>Payloads designed to trigger time delays when executed within a SQL query, and <strong>look for
+differences in the time taken to respond</strong>.</p></li>
+<li><p>OAST payloads designed to trigger an <strong>out-of-band network interaction</strong> when executed within
+a SQL query, and monitor any resulting interactions.</p></li>
+</ul>
+</div></blockquote>
+<p>Alternatively, you can find the majority of SQL injection vulnerabilities quickly and reliably using
+Burp Scanner.</p>
+</section>
+<hr class="docutils" />
+<section id="retrieving-hidden-data">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Retrieving hidden data</a><a class="headerlink" href="#retrieving-hidden-data" title="Permalink to this heading">¶</a></h2>
+<p>Imagine a shopping application that displays products in different categories.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the user clicks on the <strong>Gifts category</strong>, their browser requests the URL:</p>
+<div class="highlight-URL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> https://insecure-website.com/products?category=Gifts
+</pre></div>
+</div>
+<p>This causes the application to make a SQL query to retrieve details of the relevant products
+from the database:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Gifts&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">released</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>This SQL query asks the database to return:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>all details (*)</p></li>
+<li><p>from the products table</p></li>
+<li><p>where the category is Gifts</p></li>
+<li><p>and released is 1.</p></li>
+</ul>
+</div></blockquote>
+<p>The restriction released = 1 is being used to hide products that are not released. We could assume
+for unreleased products, released = 0.</p>
+<p>The application doesn’t implement any defenses against SQL injection attacks.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This means an attacker can construct the following attack, for example:</p>
+<div class="highlight-URL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> https://insecure-website.com/products?category=Gifts&#39;--
+</pre></div>
+</div>
+<p>This results in the SQL query:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Gifts&#39;</span><span class="c1">--&#39; AND released = 1</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>Crucially, note that <strong>–</strong> is a comment indicator in SQL. This means that the rest of the query is
+interpreted as a comment, effectively removing it. In this example, this means the query no longer
+includes <strong>AND released = 1</strong>. As a result, all products are displayed, including those that are not
+yet released.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use a similar attack to cause the application to display all the products in any
+category, including categories that they don’t know about:</p>
+<div class="highlight-URL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> https://insecure-website.com/products?category=Gifts&#39;+OR+1=1--
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This results in the SQL query:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Gifts&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="c1">--&#39; AND released = 1</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>The modified query returns all items where either the category is Gifts, or 1 is equal to 1. As 1=1
+is always true, the query returns all items.</p>
+</section>
 <hr class="docutils" />
 <section id="weblinks">
-<h2><a class="toc-backref" href="#sommaire" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -281,7 +390,10 @@
                         <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
-<li><a class="reference internal" href="#">SQL Injection</a><ul>
+<li><a class="reference internal" href="#">SQL Injection (SQLi)</a><ul>
+<li><a class="reference internal" href="#what-is-sql-injection-sqli">What is SQL injection (SQLi)?</a></li>
+<li><a class="reference internal" href="#how-to-detect-sql-injection-vulnerabilities">How to detect SQL injection vulnerabilities</a></li>
+<li><a class="reference internal" href="#retrieving-hidden-data">Retrieving hidden data</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>
@@ -319,7 +431,6 @@
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../../_static/translations.js"></script>
         <script type="text/javascript" src="../../../../../_static/dist/theme.js"></script>
         <script type="text/javascript" src="../../../../../_static/dist/vendor.js"></script>
         <script type="text/javascript" src="../../../../../_static/searchtools.js"></script>
