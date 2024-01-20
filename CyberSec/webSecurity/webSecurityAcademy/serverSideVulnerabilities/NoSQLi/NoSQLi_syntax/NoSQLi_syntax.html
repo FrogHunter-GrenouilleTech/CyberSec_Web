@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="Cyber Security" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+        <title>NoSQL - Syntax Injection &mdash; Cyber Security  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
+            <link rel="index" title="Index" href="../../../../../../genindex.html" />
+            <link rel="search" title="Search" href="../../../../../../search.html" />
+            <link rel="top" title="Cyber Security  documentation" href="#" />
+            <link rel="up" title="NoSQL injection" href="../NoSQLi.html" />
+            <link rel="next" title="NoSQL - Operator Injection" href="../NoSQLi_operator/NoSQLi_operator.html" />
+            <link rel="prev" title="NoSQL injection" href="../NoSQLi.html" />
+    </head>
+<body>
+    <header class="container-fluid bg-primary">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="../../../../../../index.html"
+                        title="logoGrenouilleTech"
+                        class="logo navbar-brand"
+                    >
+                        <img src="../../../../../../_static/img/ColorLogoOpenHardware-noBackground.svg" width="500" height="400" alt="logoGrenouilleTech"
+                            class="logo-img"
+                        />
+                        Cyber Security
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../CyberSec.html">Cyber Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../BlueTeam/BlueTeam.html">Blue Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Distrib/Kali/Kali.html">Kali</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Hardware/Hardware.html">Hardware</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Pentest/Pentest.html">The Pentest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Pentest/Scope/Scope.html">Objectives &amp; Scope</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Scope/blackGreyWhite/blackGreyWhite.html">Black, Grey &amp; White box penetration testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Scope/rules/rules.html">Rules of engagement &amp; Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Pentest/Enumeration/Enumeration.html">Enumeration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Enumeration/PassiveEnum/PassiveEnum.html">Passive information gathering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Enumeration/ActiveEnum/ActiveEnum.html">Active information gathering</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Pentest/Enumeration/ActiveEnum/NetEnum/NetEnum.html">Network Enumeration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Enumeration/OSINT/OSINT.html">OSInt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Pentest/Vulnerability/Vulnerability.html">Vulnerability, identification and assesment</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Pentest/Exploitation/Exploitation.html">Exploitation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/Exploit/Exploit.html">Exploit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Phishing/Phishing.html">Phishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Phishing/Scenario/Scenario.html">Scenario</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Ressources/Guides/Guides.html">Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../webSecurity.html">Web Security</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../bugBountyVDS/bugBountyVDS.html">Bug Bounty &amp; Vulnerability Disclosur Program (VDS)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../webSecurityAcademy.html">Web Security Academy</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../../pathTraversal/pathTraversal.html">Path Traversal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../accessControl/accessControl.html">Access Control</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../SSRF/SSRF.html">Server-Side Request Forgery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="../NoSQLi.html">NoSQL injection</a><ul class="current">
+<li class="toctree-l6 current"><a class="current reference internal" href="#">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Toolbox/Toolbox.html">Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/BurpSuite/BurpSuite.html">BurpSuite</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Certutil/Certutil.html">Certutil.exe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/CrossLinked/CrossLinked.html">CrossLinked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/DockerInUrl/DockerInUrl.html">Docker-Inurlbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Exegol/Exegol.html">Exegol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Gophish/Gophish.html">Gophish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Metasploit/Metasploit.html">Metasploit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Netcat/Netcat.html">Netcat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/NetCmd/NetCmd.html">Net Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Nmap/Nmap.html">Nmap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Nmap/Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Nmap/NmapScripEngine/NmapScripEngine.html">Namp Script Engine (NSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Nmap/outputData/outputData.html">Output Data to files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Powershell/Powershell.html">Powershell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Python/Python.html">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/ReverseShell/ReverseShell.html">Reverse Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Toolbox/ReverseShell/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Searchsploit/Searchsploit.html">Searchsploit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/SystemCmd/SystemCmd.html">System commands</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/VBSript/VBSript.html">VBSript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/wget/wget.html">wget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../../../../CyberSec.html">Cyber Security</a></li>
+            <li class="breadcrumb-item"><a href="../../../../webSecurity.html">Web Security</a></li>
+            <li class="breadcrumb-item"><a href="../../../webSecurityAcademy.html">Web Security Academy</a></li>
+            <li class="breadcrumb-item"><a href="../../serverSideVulnerabilities.html">Server-Side Vulnerabilities</a></li>
+            <li class="breadcrumb-item"><a href="../NoSQLi.html">NoSQL injection</a></li>
+        <li class="breadcrumb-item active" aria-current="page">NoSQL - Syntax Injection</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="ahd-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../../../../../_sources/CyberSec/webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main">
+<section id="nosql-syntax-injection">
+<span id="ref-nosqlisynt"></span><h1><a class="toc-backref" href="#contents" role="doc-backlink">NoSQL - Syntax Injection</a><a class="headerlink" href="#nosql-syntax-injection" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
+<span id="index-0"></span><p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#nosql-syntax-injection" id="id1">NoSQL - Syntax Injection</a></p>
+<ul>
+<li><p><a class="reference internal" href="#detecting-syntax-injection-in-mongodb" id="id2">Detecting syntax injection in MongoDB</a></p>
+<ul>
+<li><p><a class="reference internal" href="#determining-which-characters-are-processed" id="id3">Determining which characters are processed</a></p></li>
+<li><p><a class="reference internal" href="#confirming-conditional-behavior" id="id4">Confirming conditional behavior</a></p></li>
+<li><p><a class="reference internal" href="#overriding-existing-conditions" id="id5">Overriding existing conditions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#weblinks" id="id6">Weblinks</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr class="docutils" />
+<p>You can potentially detect NoSQL injection vulnerabilities by attempting to break the query syntax.
+To do this, systematically test each input by submitting <strong>fuzz strings and special characters that
+trigger a database error or some other detectable behavior</strong> if they’re not adequately sanitized or
+filtered by the application.</p>
+<p>If you know the API language of the target database, use special characters and fuzz strings that
+are relevant to that language. Otherwise, use a variety of fuzz strings to target multiple API
+languages.</p>
+<hr class="docutils" />
+<section id="detecting-syntax-injection-in-mongodb">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Detecting syntax injection in MongoDB</a><a class="headerlink" href="#detecting-syntax-injection-in-mongodb" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consider a shopping application that displays products in different categories. When the
+user selects the <strong>Fizzy drinks category</strong>, their browser requests the following URL:</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">fizzy</span>
+</pre></div>
+</div>
+<p>This causes the application to send a JSON query to retrieve relevant products from the
+product collection in the MongoDB database:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;fizzy&#39;</span>
+</pre></div>
+</div>
+<p>To test whether the input may be vulnerable, submit a fuzz string in the value of the
+<em>category</em> parameter. An example string for MongoDB is:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="err">&#39;&quot;</span><span class="sb">`{</span>
+<span class="linenos">2</span><span class="sb"> ;$Foo}</span>
+<span class="linenos">3</span><span class="sb"> $Foo \xYZ</span>
+</pre></div>
+</div>
+<p>Use this fuzz string to construct the following attack:</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">&#39;%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00</span>
+</pre></div>
+</div>
+<p>If this causes a change from the original response, this may indicate that user input isn’t
+filtered or sanitized correctly.</p>
+<p><strong>N.B</strong>: In this example, we’re injecting the fuzz string via the URL, so the string is
+<strong>URL-encoded</strong>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>NoSQL injection vulnerabilities can occur in a variety of contexts, and you need to adapt
+your fuzz strings accordingly. Otherwise, you may simply trigger validation errors that mean
+the application never executes your query.</p>
+<p>In some applications, you may need to inject your payload via a <strong>JSON property</strong> instead.
+In this case, this payload would become .</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="err">&#39;\&quot;`{\r;$Foo}\n$Foo \\xYZ\u0000</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<section id="determining-which-characters-are-processed">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Determining which characters are processed</a><a class="headerlink" href="#determining-which-characters-are-processed" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To determine which characters are interpreted as syntax by the application, you can inject
+individual characters. For example, you could submit <strong>“ ‘ “</strong>, which results in the
+following MongoDB query:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="err">&#39;</span>
+</pre></div>
+</div>
+<p>If this causes a change from the original response, this may indicate that the <strong>“ ‘ “</strong>
+character has broken the query syntax and caused a syntax error. You can confirm this by
+submitting a valid query string in the input, for example by escaping the quote:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;\&#39;&#39;</span>
+</pre></div>
+</div>
+<p>If this doesn’t cause a syntax error, this may mean that the application is vulnerable to an
+injection attack.</p>
+</div>
+</div></blockquote>
+</section>
+<section id="confirming-conditional-behavior">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Confirming conditional behavior</a><a class="headerlink" href="#confirming-conditional-behavior" title="Permalink to this heading">¶</a></h3>
+<p>After detecting a vulnerability, the next step is to determine whether you can influence boolean
+conditions using NoSQL syntax.</p>
+<p>To test this, send two requests:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>One with a false condition</p></li>
+<li><p>One with a true condition.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example you could use the conditional statements <strong>‘ &amp;&amp; 0 &amp;&amp; ‘x</strong> and <strong>‘ &amp;&amp; 1 &amp;&amp; ‘x</strong>
+as follows:</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt"> # False condition</span>
+<span class="linenos">2</span><span class="nt"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">fizzy&#39;+%26%26+0+%26%26+&#39;x</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="s"> # True condition</span>
+<span class="linenos">5</span><span class="s"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">fizzy&#39;+%26%26+1+%26%26+&#39;x</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to <strong>URL Encode”</strong> the payload</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="err"> # payload without URL encoding</span>
+<span class="linenos">2</span><span class="err"> &#39; &amp;&amp; 0 &amp;&amp; &#39;x</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="err"> # payload URL URL encoded</span>
+<span class="linenos">5</span><span class="err"> %27+%26%26+0+%26%26+%27x</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>If the application behaves differently, this suggests that the false condition impacts the query
+logic, but the true condition doesn’t. This indicates that injecting this style of syntax impacts a
+server-side query.</p>
+</section>
+<section id="overriding-existing-conditions">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Overriding existing conditions</a><a class="headerlink" href="#overriding-existing-conditions" title="Permalink to this heading">¶</a></h3>
+<p>Now that you have identified that you can influence boolean conditions, you can attempt to override
+existing conditions to exploit the vulnerability.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example, you can inject a JavaScript condition that always evaluates to true, such as
+<strong>‘||1||’</strong>:</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">fizzy%27%7c%7c%31%7c%7c%27</span>
+</pre></div>
+</div>
+<p>This results in the following MongoDB query:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;fizzy&#39;</span><span class="o">||</span><span class="s1">&#39;1&#39;</span><span class="o">==</span><span class="s1">&#39;1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>As the injected condition is always true, the modified query returns all items. This enables you to
+view all the products in any category, including hidden or unknown categories.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Take care when injecting a condition that always evaluates to true into a NoSQL query.
+Although this may be harmless in the initial context you’re injecting into, it’s common for
+applications to use data from a single request in multiple different queries.</p>
+<p>If an application uses it when updating or deleting data, for example, this can result in
+accidental data loss.</p>
+</div>
+</div></blockquote>
+<p>You could also add a null character after the category value. MongoDB may ignore all character
+after a null character. This means that any additional conditions on the MongoDB query are ignored.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example, the query may have an additional <strong>this.released</strong> restriction:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;fizzy&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">released</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span>
+</pre></div>
+</div>
+<p>The restriction <strong>this.released == 1</strong> is used to only show products that are released. For
+unreleased products, presumably <strong>this.released == 0</strong>.</p>
+<p>In this case, an attacker could construct an attack as follows:</p>
+<div class="highlight-urlencoded notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt"> https://insecure-website.com/product/lookup?category</span><span class="o">=</span><span class="s">fizzy&#39;%00</span>
+</pre></div>
+</div>
+<p>This results in the following NoSQL query:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;fizzy&#39;</span><span class="nx">\u0000</span><span class="err">&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">released</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>If MongoDB ignores all characters after the null character, this removes the requirement for the
+released field to be set to 1. As a result, all products in the fizzy category are displayed,
+including unreleased products.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="weblinks">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="../NoSQLi.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>NoSQL injection
+    </a>
+    <a class="float-right" href="../NoSQLi_operator/NoSQLi_operator.html" title="Next">
+        NoSQL - Operator Injection <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">NoSQL - Syntax Injection</a><ul>
+<li><a class="reference internal" href="#detecting-syntax-injection-in-mongodb">Detecting syntax injection in MongoDB</a><ul>
+<li><a class="reference internal" href="#determining-which-characters-are-processed">Determining which characters are processed</a></li>
+<li><a class="reference internal" href="#confirming-conditional-behavior">Confirming conditional behavior</a></li>
+<li><a class="reference internal" href="#overriding-existing-conditions">Overriding existing conditions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#weblinks">Weblinks</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/ahdcreative/sphinx_ahd_theme" rel="nofollow" target="_blank">
+                        AHDCreative Sphinx Theme 5.3.8
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Poltergeist42
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            jQuery(function() { Search.loadIndex("../../../../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>

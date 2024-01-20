@@ -117,7 +117,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../Ressources/Ressources.html">Ressources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/Guides/Guides.html">Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/FlipperZero/FlipperZero.html">FlipperZero</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/OSintBlog/OSintBlog.html">OSInt - Blogs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
@@ -136,6 +138,11 @@
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi.html">NoSQL injection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.html">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -154,6 +161,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../LinPEAS/LinPEAS.html">LinPEAS – Linux Privilege Escalation Awesome Script</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../Metasploit/Metasploit.html">Metasploit</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
@@ -163,6 +173,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../NetCmd/NetCmd.html">Net Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Nmap/Nmap.html">Nmap</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
@@ -172,6 +183,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
 </ul>
@@ -192,9 +206,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../VBSript/VBSript.html">VBSript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wget/wget.html">wget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../Wordlist/Wordlist.html">Wordlist</a></li>
 </ul>
 </li>
 </ul>
@@ -257,9 +269,9 @@
 <nav class="contents" id="contents">
 <span id="index-0"></span><p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#gophish" id="id21">Gophish</a></p>
+<li><p><a class="reference internal" href="#gophish" id="id23">Gophish</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id22">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id24">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
@@ -273,37 +285,38 @@
 <div><p>official website :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference external" href="https://getgophish.com/">Gophish Framework (official page)</a> <a class="footnote-reference brackets" href="#id15" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://github.com/gophish/gophish">Gophish github</a> <a class="footnote-reference brackets" href="#id17" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://getgophish.com/">Gophish Framework (official page)</a> <a class="footnote-reference brackets" href="#id17" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/gophish/gophish">Gophish github</a> <a class="footnote-reference brackets" href="#id19" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div></blockquote>
 <p>tuto video :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=iRY9CVsCggg">How To Setup GoPhish Phishing - Working 2023 using gmail - yt</a> <a class="footnote-reference brackets" href="#id13" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Tdpzi8M3Vtw">Tutoriel Gophish : créer sa campagne de phishing ! - yt</a> <a class="footnote-reference brackets" href="#id9" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=iRY9CVsCggg">How To Setup GoPhish Phishing - Working 2023 using gmail - yt</a> <a class="footnote-reference brackets" href="#id15" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Tdpzi8M3Vtw">Tutoriel Gophish : créer sa campagne de phishing ! - yt</a> <a class="footnote-reference brackets" href="#id11" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div></blockquote>
 <p>Templates :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html">GoPhish-Templates</a> <a class="footnote-reference brackets" href="#id11" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://github.com/criggs626/PhishingTemplates">Phishing Templates</a> <a class="footnote-reference brackets" href="#id19" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://caniphish.com/free-phishing-test/phishing-email-templates">Phishing Email Templates</a> <a class="footnote-reference brackets" href="#id5" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://github.com/An0nUD4Y/blackeye/tree/master/sites">Phishing Templates - Landing page</a> <a class="footnote-reference brackets" href="#id7" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html">GoPhish-Templates</a> <a class="footnote-reference brackets" href="#id13" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/criggs626/PhishingTemplates">Phishing Templates</a> <a class="footnote-reference brackets" href="#id21" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://caniphish.com/free-phishing-test/phishing-email-templates">Phishing Email Templates</a> <a class="footnote-reference brackets" href="#id7" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/An0nUD4Y/blackeye/tree/master/sites">Phishing Templates - Landing page</a> <a class="footnote-reference brackets" href="#id9" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div></blockquote>
 <dl class="simple">
 <dt>User Help :</dt><dd><ul class="simple">
-<li><p><a class="reference external" href="https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/">Adopter les bons réflexes face au phishing</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips">Conseils de prévention du phishing</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/">Adopter les bons réflexes face au phishing</a> <a class="footnote-reference brackets" href="#id5" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips">Conseils de prévention du phishing</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </dd>
 </dl>
 <p>Misc :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a href="#id23"><span class="problematic" id="id24">`ngrok - web url genrator for localhost`_</span></a></p></li>
+<li><p><a href="#id25"><span class="problematic" id="id26">`ngrok - web url genrator for localhost`_</span></a></p></li>
+<li><p><a class="reference external" href="https://www.sprocketsecurity.com/resources/never-had-a-bad-day-phishing-how-to-set-up-gophish-to-evade-security-controls">Never had a bad day phishing. How to set up GoPhish to evade security controls.</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -315,42 +328,46 @@
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id1" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips">https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips</a></p>
+<p><a class="reference external" href="https://www.sprocketsecurity.com/resources/never-had-a-bad-day-phishing-how-to-set-up-gophish-to-evade-security-controls">https://www.sprocketsecurity.com/resources/never-had-a-bad-day-phishing-how-to-set-up-gophish-to-evade-security-controls</a></p>
 </aside>
 <aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/">https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/</a></p>
+<p><a class="reference external" href="https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips">https://www.kaspersky.fr/resource-center/preemptive-safety/phishing-prevention-tips</a></p>
 </aside>
 <aside class="footnote brackets" id="id5" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://caniphish.com/free-phishing-test/phishing-email-templates">https://caniphish.com/free-phishing-test/phishing-email-templates</a></p>
+<p><a class="reference external" href="https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/">https://www.premiers-clics.fr/cours-informatique/protection-phishing-le-comportement-a-adopter/</a></p>
 </aside>
 <aside class="footnote brackets" id="id7" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://github.com/An0nUD4Y/blackeye/tree/master/sites">https://github.com/An0nUD4Y/blackeye/tree/master/sites</a></p>
+<p><a class="reference external" href="https://caniphish.com/free-phishing-test/phishing-email-templates">https://caniphish.com/free-phishing-test/phishing-email-templates</a></p>
 </aside>
 <aside class="footnote brackets" id="id9" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">5</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=Tdpzi8M3Vtw">https://www.youtube.com/watch?v=Tdpzi8M3Vtw</a></p>
+<p><a class="reference external" href="https://github.com/An0nUD4Y/blackeye/tree/master/sites">https://github.com/An0nUD4Y/blackeye/tree/master/sites</a></p>
 </aside>
 <aside class="footnote brackets" id="id11" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">6</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html">https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=Tdpzi8M3Vtw">https://www.youtube.com/watch?v=Tdpzi8M3Vtw</a></p>
 </aside>
 <aside class="footnote brackets" id="id13" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">7</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=iRY9CVsCggg">https://www.youtube.com/watch?v=iRY9CVsCggg</a></p>
+<p><a class="reference external" href="https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html">https://github.com/FreeZeroDays/GoPhish-Templates/blob/master/Landing_Pages/O-Three-Sixty-Five_Landing_Page.html</a></p>
 </aside>
 <aside class="footnote brackets" id="id15" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">8</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://getgophish.com/">https://getgophish.com/</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=iRY9CVsCggg">https://www.youtube.com/watch?v=iRY9CVsCggg</a></p>
 </aside>
 <aside class="footnote brackets" id="id17" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">9</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://github.com/gophish/gophish">https://github.com/gophish/gophish</a></p>
+<p><a class="reference external" href="https://getgophish.com/">https://getgophish.com/</a></p>
 </aside>
 <aside class="footnote brackets" id="id19" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">10</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://github.com/gophish/gophish">https://github.com/gophish/gophish</a></p>
+</aside>
+<aside class="footnote brackets" id="id21" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">11</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://github.com/criggs626/PhishingTemplates">https://github.com/criggs626/PhishingTemplates</a></p>
 </aside>
 </aside>

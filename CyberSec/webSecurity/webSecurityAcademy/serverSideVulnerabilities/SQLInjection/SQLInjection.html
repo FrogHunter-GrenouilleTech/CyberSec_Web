@@ -19,7 +19,7 @@
             <link rel="search" title="Search" href="../../../../../search.html" />
             <link rel="top" title="Cyber Security  documentation" href="#" />
             <link rel="up" title="Server-Side Vulnerabilities" href="../serverSideVulnerabilities.html" />
-            <link rel="next" title="Toolbox" href="../../../../Toolbox/Toolbox.html" />
+            <link rel="next" title="NoSQL injection" href="../NoSQLi/NoSQLi.html" />
             <link rel="prev" title="OS command injection (AKA : shell injection)" href="../OSCmdInjec/OSCmdInjec.html" />
     </head>
 <body>
@@ -136,6 +136,11 @@
 <li class="toctree-l5"><a class="reference internal" href="../fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5 current"><a class="current reference internal" href="#">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../NoSQLi/NoSQLi.html">NoSQL injection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../NoSQLi/NoSQLi_syntax/NoSQLi_syntax.html">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../NoSQLi/NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,6 +168,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/NetCmd/NetCmd.html">Net Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Toolbox/Nmap/Nmap.html">Nmap</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Toolbox/Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
@@ -259,12 +265,14 @@
 <nav class="contents" id="contents">
 <span id="index-0"></span><p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#sql-injection-sqli" id="id1">SQL Injection (SQLi)</a></p>
+<li><p><a class="reference internal" href="#sql-injection-sqli" id="id3">SQL Injection (SQLi)</a></p>
 <ul>
-<li><p><a class="reference internal" href="#what-is-sql-injection-sqli" id="id2">What is SQL injection (SQLi)?</a></p></li>
-<li><p><a class="reference internal" href="#how-to-detect-sql-injection-vulnerabilities" id="id3">How to detect SQL injection vulnerabilities</a></p></li>
-<li><p><a class="reference internal" href="#retrieving-hidden-data" id="id4">Retrieving hidden data</a></p></li>
-<li><p><a class="reference internal" href="#weblinks" id="id5">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#what-is-sql-injection-sqli" id="id4">What is SQL injection (SQLi)?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-detect-sql-injection-vulnerabilities" id="id5">How to detect SQL injection vulnerabilities</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-hidden-data" id="id6">Retrieving hidden data</a></p></li>
+<li><p><a class="reference internal" href="#subverting-application-logic" id="id7">Subverting application logic</a></p></li>
+<li><p><a class="reference internal" href="#be-careful-with-the-use-of-or-1-1" id="id8">Be careful with the use of ‘OR 1=1 – -’</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id9">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
@@ -368,10 +376,114 @@ category, including categories that they don’t know about:</p>
 </div></blockquote>
 <p>The modified query returns all items where either the category is Gifts, or 1 is equal to 1. As 1=1
 is always true, the query returns all items.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Exemple</strong></p>
+<p>In a normal mode (without SQLi),</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_gifts.png"><img alt="../../../../../_images/SQLi_gifts.png" class="align-center" src="../../../../../_images/SQLi_gifts.png" style="width: 500px;" /></a>
+<p>With an SQLi,</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_on.png"><img alt="../../../../../_images/SQLi_on.png" class="align-center" src="../../../../../_images/SQLi_on.png" style="width: 500px;" /></a>
+<p>All the images from the “Gift” category are shoed.</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_gifts_more.png"><img alt="../../../../../_images/SQLi_gifts_more.png" class="align-center" src="../../../../../_images/SQLi_gifts_more.png" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="subverting-application-logic">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Subverting application logic</a><a class="headerlink" href="#subverting-application-logic" title="Permalink to this heading">¶</a></h2>
+<p>When an application ask for credential with a username and password. If a user submits the username
+<strong>wiener</strong> and the password <strong>bluecheese</strong>, the application checks the credentials by performing the
+following SQL query:</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wiener&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bluecheese&#39;</span>
+</pre></div>
+</div>
+<p>If the query returns the details of a user, then the login is successful. Otherwise, it is
+rejected.</p>
+</div>
+</div></blockquote>
+<p>In this case, an attacker can log in as any user without the need for a password. They can do this
+using the SQL comment sequence <strong>–</strong> to remove the password check from the WHERE clause of the
+query.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example, submitting the username <strong>administrator’– and a blank password</strong> results in
+the following query:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;administrator&#39;</span><span class="c1">--&#39; AND password = &#39;&#39;</span>
+</pre></div>
+</div>
+<p>This query returns the user whose username is <strong>administrator</strong> and successfully logs the
+attacker in as that user.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Exemple</strong></p>
+<p>With the normal request,</p>
+<a class="reference internal image-reference" href="../../../../../_images/noSQLi_fullQuery.png"><img alt="../../../../../_images/noSQLi_fullQuery.png" class="align-center" src="../../../../../_images/noSQLi_fullQuery.png" style="width: 500px;" /></a>
+<p>The response will not allowing us to log as “administrator”.</p>
+<a class="reference internal image-reference" href="../../../../../_images/noSQLi_resp.png"><img alt="../../../../../_images/noSQLi_resp.png" class="align-center" src="../../../../../_images/noSQLi_resp.png" style="width: 500px;" /></a>
+<p>With the SQLi juste after the username,</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_partQuery.png"><img alt="../../../../../_images/SQLi_partQuery.png" class="align-center" src="../../../../../_images/SQLi_partQuery.png" style="width: 500px;" /></a>
+<p>We will receive a 200 OK and the server will allow us to log as “administrator”.</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_resp.png"><img alt="../../../../../_images/SQLi_resp.png" class="align-center" src="../../../../../_images/SQLi_resp.png" style="width: 500px;" /></a>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>💡 Tips</strong></p>
+<p>It is always a good idea to test the request from the web page rather than repeater window
+of the proxy</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_webReq.png"><img alt="../../../../../_images/SQLi_webReq.png" class="align-center" src="../../../../../_images/SQLi_webReq.png" style="width: 500px;" /></a>
+<p>The results will be more visual.</p>
+<a class="reference internal image-reference" href="../../../../../_images/SQLi_webResp.png"><img alt="../../../../../_images/SQLi_webResp.png" class="align-center" src="../../../../../_images/SQLi_webResp.png" style="width: 500px;" /></a>
+</div>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="be-careful-with-the-use-of-or-1-1">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Be careful with the use of ‘OR 1=1 – -’</a><a class="headerlink" href="#be-careful-with-the-use-of-or-1-1" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8iSGWP7lk-M">Avoid “OR 1=1” in SQL Injections - Youtube</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+<p>During hunting for a SQL Injection, it is better to not use the <strong>‘ OR 1=1 – -’</strong> payload since a
+same string request can be used in many different query. It can cause sever damage to the database
+if the query is used to performe an “UPDATE” or “DELETE” request.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For exemple this request will update all the users password</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;newpass&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tib3rius@exemple.com&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="c1">-- -&#39;</span>
+</pre></div>
+</div>
+<p>Before the update query:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../../../_images/beforeUpdate.png"><img alt="../../../../../_images/beforeUpdate.png" class="align-center" src="../../../../../_images/beforeUpdate.png" style="width: 500px;" /></a>
+</div></blockquote>
+<p>After the update query:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../../../_images/afterUpdate.png"><img alt="../../../../../_images/afterUpdate.png" class="align-center" src="../../../../../_images/afterUpdate.png" style="width: 500px;" /></a>
+</div></blockquote>
+</div>
+</div></blockquote>
 </section>
 <hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=8iSGWP7lk-M">https://www.youtube.com/watch?v=8iSGWP7lk-M</a></p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -380,8 +492,8 @@ is always true, the query returns all items.</p>
     <a class="float-left" href="../OSCmdInjec/OSCmdInjec.html" title="Previous">
         <span aria-hidden="true">←&nbsp;</span>OS command injection (AKA : shell injection)
     </a>
-    <a class="float-right" href="../../../../Toolbox/Toolbox.html" title="Next">
-        Toolbox <span aria-hidden="true">&nbsp;→</span>
+    <a class="float-right" href="../NoSQLi/NoSQLi.html" title="Next">
+        NoSQL injection <span aria-hidden="true">&nbsp;→</span>
     </a>
 </nav>
                     </div>
@@ -394,6 +506,8 @@ is always true, the query returns all items.</p>
 <li><a class="reference internal" href="#what-is-sql-injection-sqli">What is SQL injection (SQLi)?</a></li>
 <li><a class="reference internal" href="#how-to-detect-sql-injection-vulnerabilities">How to detect SQL injection vulnerabilities</a></li>
 <li><a class="reference internal" href="#retrieving-hidden-data">Retrieving hidden data</a></li>
+<li><a class="reference internal" href="#subverting-application-logic">Subverting application logic</a></li>
+<li><a class="reference internal" href="#be-careful-with-the-use-of-or-1-1">Be careful with the use of ‘OR 1=1 – -’</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>

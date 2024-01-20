@@ -20,7 +20,7 @@
             <link rel="top" title="Cyber Security  documentation" href="#" />
             <link rel="up" title="Cyber Security" href="../CyberSec.html" />
             <link rel="next" title="BurpSuite" href="BurpSuite/BurpSuite.html" />
-            <link rel="prev" title="SQL Injection (SQLi)" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html" />
+            <link rel="prev" title="NoSQL - Operator Injection" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_operator/NoSQLi_operator.html" />
     </head>
 <body>
     <header class="container-fluid bg-primary">
@@ -117,7 +117,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../Ressources/Ressources.html">Ressources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../Ressources/Guides/Guides.html">Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/FlipperZero/FlipperZero.html">FlipperZero</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/OSintBlog/OSintBlog.html">OSInt - Blogs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
@@ -136,6 +138,11 @@
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi.html">NoSQL injection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.html">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -154,6 +161,9 @@
 <li class="toctree-l3"><a class="reference internal" href="LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="LinPEAS/LinPEAS.html">LinPEAS – Linux Privilege Escalation Awesome Script</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="Metasploit/Metasploit.html">Metasploit</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
@@ -163,6 +173,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="NetCmd/NetCmd.html">Net Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Nmap/Nmap.html">Nmap</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
@@ -172,6 +183,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
 </ul>
@@ -192,9 +206,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="VBSript/VBSript.html">VBSript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wget/wget.html">wget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="Wordlist/Wordlist.html">Wordlist</a></li>
 </ul>
 </li>
 </ul>
@@ -295,6 +307,10 @@
 <li class="toctree-l2"><a class="reference internal" href="LDAPMonitor/LDAPMonitor.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="LinPEAS/LinPEAS.html">LinPEAS – Linux Privilege Escalation Awesome Script</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LinPEAS/LinPEAS.html#weblinks">Weblinks</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Metasploit/Metasploit.html">Metasploit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
@@ -308,6 +324,13 @@
 <li class="toctree-l2"><a class="reference internal" href="Netcat/Netcat.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="NetCmd/NetCmd.html">Net Command</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="NetCmd/NetCmd.html#list-all-the-domain-users">List all the domain Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetCmd/NetCmd.html#list-all-the-domain-groups">List all the domain groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetCmd/NetCmd.html#list-all-the-member-of-the-group-domain-administrator">List all the member of the group “Domain Administrator”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetCmd/NetCmd.html#weblinks">Weblinks</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Nmap/Nmap.html">Nmap</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
@@ -319,6 +342,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OsintTools/OsintTools.html">OSInt Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="OsintTools/OsintTools.html#weblinks">Weblinks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Powershell/Powershell.html">Powershell</a><ul>
@@ -368,8 +395,8 @@
 <li class="toctree-l2"><a class="reference internal" href="wget/wget.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Owasp_ZAP/Owasp_ZAP.html#weblinks">Weblinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wordlist/Wordlist.html">Wordlist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Wordlist/Wordlist.html#weblinks">Weblinks</a></li>
 </ul>
 </li>
 </ul>
@@ -395,8 +422,8 @@ also some “must have” tools that we need to mastering.</p>
 
 </main>
                         <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
-    <a class="float-left" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html" title="Previous">
-        <span aria-hidden="true">←&nbsp;</span>SQL Injection (SQLi)
+    <a class="float-left" href="../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_operator/NoSQLi_operator.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>NoSQL - Operator Injection
     </a>
     <a class="float-right" href="BurpSuite/BurpSuite.html" title="Next">
         BurpSuite <span aria-hidden="true">&nbsp;→</span>
