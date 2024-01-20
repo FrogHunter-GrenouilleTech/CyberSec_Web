@@ -117,7 +117,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../Ressources/Ressources.html">Ressources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/Guides/Guides.html">Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/FlipperZero/FlipperZero.html">FlipperZero</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Ressources/Blog/OSintBlog/OSintBlog.html">OSInt - Blogs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul class="simple">
@@ -136,6 +138,11 @@
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi.html">NoSQL injection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.html">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../webSecurity/webSecurityAcademy/serverSideVulnerabilities/NoSQLi/NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -154,6 +161,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../LinPEAS/LinPEAS.html">LinPEAS – Linux Privilege Escalation Awesome Script</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../Metasploit/Metasploit.html">Metasploit</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
@@ -163,6 +173,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../NetCmd/NetCmd.html">Net Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Nmap/Nmap.html">Nmap</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
@@ -172,6 +183,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../Powershell/Powershell.html">Powershell</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
 </ul>
@@ -192,9 +206,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../VBSript/VBSript.html">VBSript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wget/wget.html">wget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../Wordlist/Wordlist.html">Wordlist</a></li>
 </ul>
 </li>
 </ul>
@@ -257,10 +269,18 @@
 <nav class="contents" id="contents">
 <span id="index-0"></span><p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#reverse-shell" id="id5">Reverse Shell</a></p>
+<li><p><a class="reference internal" href="#reverse-shell" id="id9">Reverse Shell</a></p>
 <ul>
-<li><p><a class="reference internal" href="#how-to-stabilized-a-reverse-shell" id="id6">How to Stabilized a reverse shell ?</a></p></li>
-<li><p><a class="reference internal" href="#weblinks" id="id7">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#how-does-a-reverse-shell-work" id="id10">How does a reverse shell work?</a></p></li>
+<li><p><a class="reference internal" href="#the-two-main-types-of-reverse-shells" id="id11">The two main types of reverse shells</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-protect-against-reverse-shells" id="id12">How to protect against reverse shells</a></p></li>
+<li><p><a class="reference internal" href="#when-a-reverse-shell-is-detected" id="id13">When a reverse shell is detected</a></p></li>
+<li><p><a class="reference internal" href="#reverse-shell-as-a-payload" id="id14">Reverse shell as a payload</a></p></li>
+<li><p><a class="reference internal" href="#how-to-stabilized-a-reverse-shell" id="id15">How to Stabilized a reverse shell ?</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id16">Weblinks</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -274,7 +294,6 @@
 </ul>
 </div>
 <hr class="docutils" />
-<p>Reverse Shell</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -284,14 +303,95 @@
 </ul>
 </div>
 </div></blockquote>
-<section id="how-to-stabilized-a-reverse-shell">
-<h2><a class="toc-backref" href="#contents" role="doc-backlink">How to Stabilized a reverse shell ?</a><a class="headerlink" href="#how-to-stabilized-a-reverse-shell" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>A <strong>reverse shell</strong>, also known as a connect-back shell, is a type of shell connection that
+initiates from the compromised machine and connects back to a predetermined attacker-controlled
+host. It is a common type of attack used by hackers to gain remote access to a system.</p>
+<p>In a typical reverse shell attack, the attacker first exploits a vulnerability on the target machine
+to gain a foothold. Once they have a foothold, they can then use a reverse shell to establish a
+connection back to their own machine. This allows them to execute commands on the target machine as
+if they were sitting at the keyboard.</p>
+<p>Reverse shells can be used to steal data, install malware, or even take complete control of the
+target machine. They are a powerful tool for attackers and can be difficult to defend against.</p>
+<section id="how-does-a-reverse-shell-work">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">How does a reverse shell work?</a><a class="headerlink" href="#how-does-a-reverse-shell-work" title="Permalink to this heading">¶</a></h2>
+<p>A reverse shell works by establishing a TCP or UDP connection from the compromised machine to the
+attacker’s machine. The attacker then uses this connection to execute commands on the compromised
+machine.</p>
+</section>
+<section id="the-two-main-types-of-reverse-shells">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">The two main types of reverse shells</a><a class="headerlink" href="#the-two-main-types-of-reverse-shells" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Bind shell:</strong> The bind shell listens for incoming connections on a specific port <strong>on the
+compromised machine</strong>. When a connection is received, the bind shell executes commands sent
+from the attacker’s machine.</p></li>
+<li><p><strong>Reverse shell:</strong> The reverse shell initiates a connection to a specific port <strong>on the
+attacker’s machine</strong>. When the connection is established, the reverse shell executes commands
+sent from the attacker’s machine.</p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+<section id="how-to-protect-against-reverse-shells">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">How to protect against reverse shells</a><a class="headerlink" href="#how-to-protect-against-reverse-shells" title="Permalink to this heading">¶</a></h3>
+<p>There are a number of things you can do to protect your systems from reverse shell attacks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Keep your software up to date:</strong> Software updates often contain patches for known
+vulnerabilities that attackers can exploit.</p></li>
+<li><p><strong>Use firewalls and intrusion detection systems (IDS):</strong> Firewalls can block unauthorized
+incoming connections, while IDS can detect suspicious activity on your network.</p></li>
+<li><p><strong>Educate your users about cybersecurity:</strong> Users should be aware of the risks of clicking on
+links or opening attachments from unknown senders.</p></li>
+<li><p><strong>Use strong passwords:</strong> Strong passwords make it more difficult for attackers to guess your
+passwords and gain access to your systems.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="when-a-reverse-shell-is-detected">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">When a reverse shell is detected</a><a class="headerlink" href="#when-a-reverse-shell-is-detected" title="Permalink to this heading">¶</a></h3>
+<p>If you suspect that your system has been compromised by a reverse shell, there are a number of
+things you can do:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Isolate the compromised machine from the network:</strong> This will prevent the attacker from
+further exploiting the system.</p></li>
+<li><p><strong>Scan the compromised machine for malware:</strong> Malware can be used to hide the presence of a
+reverse shell.</p></li>
+<li><p><strong>Change your passwords:</strong> This will help to prevent the attacker from accessing other systems.</p></li>
+<li><p><strong>Report the incident to the authorities:</strong> If you suspect that your system has been used to
+commit a crime, you should report the incident to the authorities.</p></li>
+</ul>
+</div></blockquote>
+<p>By following these tips, you can help to protect your systems from reverse shell attacks.</p>
+</section>
+<hr class="docutils" />
+<section id="reverse-shell-as-a-payload">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Reverse shell as a payload</a><a class="headerlink" href="#reverse-shell-as-a-payload" title="Permalink to this heading">¶</a></h3>
+<p>Since a reverse shell can be establish only after the exploitation of one or more vulnerability. We
+need need to push the reverse shell, to the compromized computer, as a payload in the same time of
+the exploitation of the vulnerability.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Liens Web</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/">Stabilizing the Shell</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://www.revshells.com/">Reverse Shell Generator</a> <a class="footnote-reference brackets" href="#id5" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://rcxonline.cf/">rcX - Shell Generator</a> <a class="footnote-reference brackets" href="#id3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="how-to-stabilized-a-reverse-shell">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">How to Stabilized a reverse shell ?</a><a class="headerlink" href="#how-to-stabilized-a-reverse-shell" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/">Stabilizing the Shell</a> <a class="footnote-reference brackets" href="#id7" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div>
 </div></blockquote>
@@ -314,7 +414,7 @@
 </section>
 <hr class="docutils" />
 <section id="weblinks">
-<h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h3>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id1" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
@@ -322,9 +422,18 @@
 </aside>
 <aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://rcxonline.cf/">https://rcxonline.cf/</a></p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.revshells.com/">https://www.revshells.com/</a></p>
+</aside>
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/">https://jasonturley.xyz/how-to-stabilize-a-reverse-shell/</a></p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 
@@ -344,8 +453,15 @@
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
 <li><a class="reference internal" href="#">Reverse Shell</a><ul>
+<li><a class="reference internal" href="#how-does-a-reverse-shell-work">How does a reverse shell work?</a></li>
+<li><a class="reference internal" href="#the-two-main-types-of-reverse-shells">The two main types of reverse shells</a><ul>
+<li><a class="reference internal" href="#how-to-protect-against-reverse-shells">How to protect against reverse shells</a></li>
+<li><a class="reference internal" href="#when-a-reverse-shell-is-detected">When a reverse shell is detected</a></li>
+<li><a class="reference internal" href="#reverse-shell-as-a-payload">Reverse shell as a payload</a></li>
 <li><a class="reference internal" href="#how-to-stabilized-a-reverse-shell">How to Stabilized a reverse shell ?</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
