@@ -1,13 +1,14 @@
-==============
-Hardware [WIP]
-==============
+===============
+Wireshark [WIP]
+===============
 
 .. index::
-   single: Hardware
+   single: Wireshark
+   single: Tools; Wireshark
 
 .. contents::
+    :depth: 3
     :backlinks: top
-
 
 ####
 
