@@ -10,7 +10,7 @@
     <meta name="docsearch:release" content="" />
     <meta name="docsearch:version" content="" />
     
-        <title>Blue Team &mdash; Cyber Security  documentation</title>
+        <title>Learning Process &mdash; Cyber Security  documentation</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/dist/fontawesome.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/dist/theme.css" />
@@ -19,7 +19,7 @@
             <link rel="search" title="Search" href="../../search.html" />
             <link rel="top" title="Cyber Security  documentation" href="#" />
             <link rel="up" title="Cyber Security" href="../CyberSec.html" />
-            <link rel="next" title="Introduction to Darkweb Operations" href="DarkwebOps/DarkwebOps.html" />
+            <link rel="next" title="Blue Team" href="../BlueTeam/BlueTeam.html" />
             <link rel="prev" title="Cyber Security" href="../CyberSec.html" />
     </head>
 <body>
@@ -62,12 +62,15 @@
         <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../CyberSec.html">Cyber Security</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Blue Team</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Learning Process</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="SIEM/SIEM.html">Security Information and Event Management - SIEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlueTeam/BlueTeam.html">Blue Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../BlueTeam/SIEM/SIEM.html">Security Information and Event Management - SIEM</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
@@ -114,6 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Ressources/Blog/Blog.html">Blogs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/FlipperZero/FlipperZero.html">FlipperZero</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/LinPirvEsc/LinPirvEsc.html">Linux Privilege Escalation - blog &amp; cookbook</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/OSintBlog/OSintBlog.html">OSInt - Blogs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/WinPrivEsc/WinPrivEsc.html">Windows Privilege Escalation - blog &amp; cookbook</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Ressources/Blog/WriteUp/WriteUp.html">Write-Up</a></li>
@@ -212,6 +216,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../HackTheBox/HackTheBox.html">Hack The Box</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../HackTheBox/WebRequests/WebRequests.html">Web Requests</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     </nav>
@@ -233,7 +243,7 @@
     <ol class="breadcrumb m-0 p-0 bg-transparent">
         <li class="breadcrumb-item"><a href="../../index.html">Docs</a></li>
             <li class="breadcrumb-item"><a href="../CyberSec.html">Cyber Security</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Blue Team</li>
+        <li class="breadcrumb-item active" aria-current="page">Learning Process</li>
     </ol>
 </nav>
                     </div>
@@ -245,11 +255,11 @@
                             <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
                             <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
                         </button>
-    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/BlueTeam/BlueTeam.rst" rel="nofollow">
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/LearningProcess/LearningProcess.rst" rel="nofollow">
         <span class="btn-icon"><span class="fab fa-github"></span></span>
         <span class="btn-text">Edit on GitHub</span>
     </a>
-    <a class="btn btn-sm btn-light text-decoration-none" href="../../_sources/CyberSec/BlueTeam/BlueTeam.rst.txt" rel="nofollow">
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../_sources/CyberSec/LearningProcess/LearningProcess.rst.txt" rel="nofollow">
         <span class="btn-icon"><span class="fas fa-code"></span></span>
         <span class="btn-text">View source</span>
     </a>
@@ -264,71 +274,39 @@
                 <div class="row">
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
                         <main role="main">
-<section id="blue-team">
-<span id="ref-blueteam"></span><h1><a class="toc-backref" href="#contents" role="doc-backlink">Blue Team</a><a class="headerlink" href="#blue-team" title="Permalink to this heading">¶</a></h1>
+<section id="learning-process">
+<h1><a class="toc-backref" href="#contents" role="doc-backlink">Learning Process</a><a class="headerlink" href="#learning-process" title="Permalink to this heading">¶</a></h1>
 <nav class="contents" id="contents">
 <span id="index-0"></span><p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#blue-team" id="id3">Blue Team</a></p>
+<li><p><a class="reference internal" href="#learning-process" id="id1">Learning Process</a></p>
 <ul>
-<li><p><a class="reference internal" href="#weblinks" id="id4">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#htb-learning-process" id="id2">HTB - Learning Process</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id3">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html#what-is-the-clear-web">What is the Clear Web?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html#what-is-the-deep-web">What is the Deep Web?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html#what-is-the-dark-web">What is the Dark Web?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html#why-is-it-useful">Why is it Useful?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DarkwebOps/Introduction/Introduction.html#weblinks">Weblinks</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="SIEM/SIEM.html">Security Information and Event Management - SIEM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="SIEM/SIEM.html#what-is-siem">What is SIEM?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIEM/SIEM.html#sigma-rules">SIGMA Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIEM/SIEM.html#weblinks">Weblinks</a></li>
-</ul>
-</li>
-</ul>
 </div>
 <hr class="docutils" />
-<p>That’s the usual name of the defensinve Team. The team’s goal is to find and fix every little crack
-and weeakness of their target. Most of the time those task are performed by the IT Team or the RSSI.</p>
-<p>The other big task of the Blue Team is the Incidente response for whom It is necessary to performe
-forensic analisys, guessing and the consultation of many event logs.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Ressources</strong></p>
+<section id="htb-learning-process">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">HTB - Learning Process</a><a class="headerlink" href="#htb-learning-process" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/ecf69ad85c524cbb69a46a71280341d4/blueteamCheatSheet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Blue</span> <span class="pre">Team</span> <span class="pre">CheatSheet</span> <span class="pre">-</span> <span class="pre">PDF</span></code></a></p></li>
+<li><p>Mindset</p></li>
+<li><p>Learning Efficiency and learning types</p></li>
+<li><p>Documentation</p></li>
+<li><p>Organization</p></li>
+<li><p>Focus</p></li>
+<li><p>Attention</p></li>
+<li><p>Dealing with Frustration</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Liens Web</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.securityblue.team/">Security Blue Team</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-</ul>
-</div>
-</div></blockquote>
+</section>
 <hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id1" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.securityblue.team/">https://www.securityblue.team/</a></p>
-</aside>
-</aside>
 </section>
 </section>
 
@@ -337,8 +315,8 @@ forensic analisys, guessing and the consultation of many event logs.</p>
     <a class="float-left" href="../CyberSec.html" title="Previous">
         <span aria-hidden="true">←&nbsp;</span>Cyber Security
     </a>
-    <a class="float-right" href="DarkwebOps/DarkwebOps.html" title="Next">
-        Introduction to Darkweb Operations <span aria-hidden="true">&nbsp;→</span>
+    <a class="float-right" href="../BlueTeam/BlueTeam.html" title="Next">
+        Blue Team <span aria-hidden="true">&nbsp;→</span>
     </a>
 </nav>
                     </div>
@@ -347,7 +325,8 @@ forensic analisys, guessing and the consultation of many event logs.</p>
                         <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             <ul>
-<li><a class="reference internal" href="#">Blue Team</a><ul>
+<li><a class="reference internal" href="#">Learning Process</a><ul>
+<li><a class="reference internal" href="#htb-learning-process">HTB - Learning Process</a></li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>
