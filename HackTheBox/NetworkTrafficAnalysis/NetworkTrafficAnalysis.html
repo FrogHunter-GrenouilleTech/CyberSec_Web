@@ -298,7 +298,16 @@
 <ul>
 <li><p><a class="reference internal" href="#bpf-syntax" id="id4">BPF Syntax</a></p></li>
 <li><p><a class="reference internal" href="#nta-workflow" id="id5">NTA Workflow</a></p></li>
-<li><p><a class="reference internal" href="#weblinks" id="id6">Weblinks</a></p></li>
+<li><p><a class="reference internal" href="#the-analysis-process" id="id6">The Analysis Process</a></p>
+<ul>
+<li><p><a class="reference internal" href="#descriptive-analysis" id="id7">Descriptive Analysis</a></p></li>
+<li><p><a class="reference internal" href="#diagnostic-analysis" id="id8">Diagnostic Analysis</a></p></li>
+<li><p><a class="reference internal" href="#predictive-analysis" id="id9">Predictive Analysis</a></p></li>
+<li><p><a class="reference internal" href="#prescriptive-analysis" id="id10">Prescriptive Analysis</a></p></li>
+<li><p><a class="reference internal" href="#key-components-of-an-effective-analysis" id="id11">Key Components of an Effective Analysis</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#weblinks" id="id12">Weblinks</a></p></li>
 </ul>
 </li>
 </ul>
@@ -382,6 +391,187 @@ determine if the issue has been resolved.</p>
 </div></blockquote>
 </section>
 <hr class="docutils" />
+<section id="the-analysis-process">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">The Analysis Process</a><a class="headerlink" href="#the-analysis-process" title="Permalink to this heading">¶</a></h2>
+<p>Traffic Analysis is a <strong>detailed examination of an event or process</strong>, determining its origin and
+impact, which can be used to trigger specific precautions and/or actions to support or prevent
+future occurrences.</p>
+<p>With network traffic, this means breaking down the data into understandable chunks, examining it for
+anything that deviates from regular network traffic, for potentially malicious traffic such as
+unauthorized remote communications from the internet over RDP, SSH, or Telnet, or unique instances
+preceding network issues. While performing our analysis, we are also looking to see what the trends
+look like within the traffic and determine if it matches a baseline of typical operational traffic.</p>
+<section id="descriptive-analysis">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Descriptive Analysis</a><a class="headerlink" href="#descriptive-analysis" title="Permalink to this heading">¶</a></h3>
+<p>Descriptive analysis is an essential step in any data analysis. It serves to describe a data set
+based on individual characteristics. It helps to detect possible errors in data collection and/or
+outliers in the data set.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>What is the issue?</dt><dd><ul class="simple">
+<li><p>Suspected breach? Networking issue?</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Define our scope and the goal. (what are we looking for? which time period?)</dt><dd><ul class="simple">
+<li><p>Target: multiple hosts potentially downloading a malicious file from bad.example.com</p></li>
+<li><p>When: within the last 48 hours + 2 hours from now.</p></li>
+<li><p>Supporting info: filenames/types ‘superbad.exe’ ‘new-crypto-miner.exe’</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Define our target(s) (net / host(s) / protocol)</dt><dd><ul class="simple">
+<li><p>Scope: 192.168.100.0/24 network, protocols used were HTTP and FTP.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></blockquote>
+<p>Using our workflow, we will determine our issue, what we are looking for, when, and where to find
+it. Descriptive analysis covers these critical concepts for our analysis.</p>
+</section>
+<section id="diagnostic-analysis">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Diagnostic Analysis</a><a class="headerlink" href="#diagnostic-analysis" title="Permalink to this heading">¶</a></h3>
+<p>Diagnostic analysis clarifies the causes, effects, and interactions of conditions. It provides
+insights that are obtained through correlations and interpretation. Characteristic here is a
+backward-looking view, as in the closely related descriptive analytics, with the subtle difference
+that it tries to find reasons for events and developments.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Capture network traffic</dt><dd><ul class="simple">
+<li><p>Plug into a link with access to the 192.168.100.0/24 network to capture live traffic to
+try and grab one of the executables in transfer. See if an admin can pull PCAP and/or
+netflow data from our SIEM for the historical data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Identification of required network traffic components (filtering)</dt><dd><ul class="simple">
+<li><p>Once we have traffic, filter out any packets not needed for this investigation to include;
+any traffic that matches our common baseline and keep anything relevant to the scope of
+the investigation. For example, HTTP and FTP from the subnet, anything transferring or
+containing a GET request for the suspected executable files.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>An understanding of captured network traffic</dt><dd><ul class="simple">
+<li><p>Once we have filtered out the noise, it is time to dig for our targets—filter on things
+like ftp-data to find any files transferred and reconstruct them. <strong>For HTTP</strong>, we can
+filter on <strong>http.request.method == “GET”</strong> to see any GET requests that match the
+filenames we are searching for. This can show us who has acquired the files and
+potentially other transfers internal to the network on the same protocols.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></blockquote>
+<p>By capturing traffic around the source of our issue, clearing out any known good data, and then
+taking the time to inspect and understand what is left, we can determine if it is the cause of our
+problem. In doing so, we just performed diagnostic analysis. We are validating the cause of our
+problems and examining the events surrounding them.</p>
+</section>
+<section id="predictive-analysis">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Predictive Analysis</a><a class="headerlink" href="#predictive-analysis" title="Permalink to this heading">¶</a></h3>
+<p>By evaluating historical and current data, predictive analysis creates a predictive model for future
+probabilities. Based on the results of descriptive and diagnostic analyses, this method of data
+analysis makes it possible to identify trends, detect deviations from expected values at an early
+stage, and predict future occurrences as accurately as possible.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><dl>
+<dt>Note-taking and mind mapping of the found results</dt><dd><ul>
+<li><p>Annotating everything we do, see, or find throughout the investigation is crucial.
+Ensure we are taking ample notes, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Timeframes we captured traffic during.</p></li>
+<li><p>Suspicious hosts within the network.</p></li>
+<li><p>Conversations containing the files in question. ( to include timestamps and packet
+numbers)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Summary of the analysis (what did we find?)</dt><dd><ul class="simple">
+<li><p>Finally, summarize what we have found explaining the relevant details so that superiors
+can decide to quarantine the affected hosts or perform more significant incident
+response.</p></li>
+<li><p>Our analysis will affect decisions made, so it is essential to be as clear and concise
+as possible.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div></blockquote>
+<p>By performing an evaluation of the data we have found, comparing it to our baseline traffic, and
+known bad data such as markers of infiltration or exploitation (like signatures for viruses and
+other hacking tools), we are performing Predictive Analysis. In this process, we paint a clear
+picture so that appropriate actions can be taken in response.</p>
+</section>
+<section id="prescriptive-analysis">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Prescriptive Analysis</a><a class="headerlink" href="#prescriptive-analysis" title="Permalink to this heading">¶</a></h3>
+<p>Prescriptive analysis aims to narrow down what actions to take to eliminate or prevent a future
+problem or trigger a specific activity or process. Using the results of our workflow, we can make
+sound decisions as to what actions are required to solve the problem and prevent it from happening
+again. To prescribe a solution is the culmination of this workflow.</p>
+<p>Once done and the problem is solved, it is prudent to reflect on the entire process and develop
+lessons learned. These lessons, when documented, will enable us to make our processes
+stronger—document what was done correctly, what actions failed to help, and what could improve.</p>
+<p>Often this process is not a once-and-done kind of thing. It is usually cyclic, and we will need to
+rerun steps based on our analysis of the original capture to build a bigger picture. This could have
+been a much larger attack than what is in the examples. Suppose a full-scale incident response is
+deemed necessary. In that case, we may have to reanalyze the PCAP previously captured to look at
+any conversations that involve the affected hosts within several minutes of the executable transfer
+to ensure it did not spread over another route, as an example.</p>
+</section>
+<section id="key-components-of-an-effective-analysis">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">Key Components of an Effective Analysis</a><a class="headerlink" href="#key-components-of-an-effective-analysis" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Know your environment<span class="colon">:</span></dt>
+<dd class="field-odd"><p>There are several key components to perform traffic analysis effectively. First, know the
+environment. If we are unsure if a host belongs in the network, how can we determine if it is
+rogue or not? Keeping asset inventories and network maps is vital. These will aid in the
+analysis process.</p>
+</dd>
+<dt class="field-even">Placement is Key<span class="colon">:</span></dt>
+<dd class="field-even"><p>The placement of our host for capturing traffic is a critical thing. Closest to the source of
+the issue is the ideal placement of our capturing tool. If the traffic in question is coming
+from the internet, listening to the inbound links is a great way to see the complete picture.
+It is as close to the source as we, the administrators, can get. If the problem seems to be
+isolated to one host on our internal network, try placing the capture tools in the same
+segment as the problem host and see what traffic is happening within the segment.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
 <section id="weblinks">
 <h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
 <aside class="footnote-list brackets">
@@ -411,6 +601,14 @@ determine if the issue has been resolved.</p>
 <li><a class="reference internal" href="#">Network Traffic Analysis (NTA)</a><ul>
 <li><a class="reference internal" href="#bpf-syntax">BPF Syntax</a></li>
 <li><a class="reference internal" href="#nta-workflow">NTA Workflow</a></li>
+<li><a class="reference internal" href="#the-analysis-process">The Analysis Process</a><ul>
+<li><a class="reference internal" href="#descriptive-analysis">Descriptive Analysis</a></li>
+<li><a class="reference internal" href="#diagnostic-analysis">Diagnostic Analysis</a></li>
+<li><a class="reference internal" href="#predictive-analysis">Predictive Analysis</a></li>
+<li><a class="reference internal" href="#prescriptive-analysis">Prescriptive Analysis</a></li>
+<li><a class="reference internal" href="#key-components-of-an-effective-analysis">Key Components of an Effective Analysis</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#weblinks">Weblinks</a></li>
 </ul>
 </li>
