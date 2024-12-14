@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="Cyber Security" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+        <title>HTTP Headers &mdash; Cyber Security  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+            <link rel="index" title="Index" href="../../../../genindex.html" />
+            <link rel="search" title="Search" href="../../../../search.html" />
+            <link rel="top" title="Cyber Security  documentation" href="#" />
+            <link rel="up" title="HyperText Transfer Protocol - HTTP" href="../HTTP.html" />
+            <link rel="next" title="HTTP Methods and Codes" href="../Methods/Methods.html" />
+            <link rel="prev" title="HTTP Requests and Responses" href="../ReqResp/ReqResp.html" />
+    </head>
+<body>
+    <header class="container-fluid bg-primary">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="../../../../index.html"
+                        title="logoGrenouilleTech"
+                        class="logo navbar-brand"
+                    >
+                        <img src="../../../../_static/img/ColorLogoOpenHardware-noBackground.svg" width="500" height="400" alt="logoGrenouilleTech"
+                            class="logo-img"
+                        />
+                        Cyber Security
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../CyberSec.html">Cyber Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../LearningProcess/LearningProcess.html">Learning Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../LearningProcess/HackTheBox/HackTheBox.html">Hack The Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../LearningProcess/PortswiggerWebSecurityAcademy/PortswiggerWebSecurityAcademy.html">Portswigger - Web Security Academy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../LearningProcess/Trainning/Trainning.html">Tranning and CTF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Organization/Organization.html">Organization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../WebRequests.html">Web Requests</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../HTTP.html">HyperText Transfer Protocol - HTTP</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ReqResp/ReqResp.html">HTTP Requests and Responses</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">HTTP Headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Methods/Methods.html">HTTP Methods and Codes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../BlueTeam/BlueTeam.html">Blue Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../BlueTeam/DarkwebOps/DarkwebOps.html">Introduction to Darkweb Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../BlueTeam/DarkwebOps/Introduction/Introduction.html">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../BlueTeam/SIEM/SIEM.html">Security Information and Event Management - SIEM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Distrib/Distrib.html">Cyber Security OS Distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Distrib/Kali/Kali.html">Kali</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Hardware/Hardware.html">Hardware [WIP]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../NetworkTrafficAnalysis/NetworkTrafficAnalysis.html">Network Traffic Analysis (NTA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Pentest/Pentest.html">The Pentest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Pentest/Scope/Scope.html">Objectives &amp; Scope</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Scope/blackGreyWhite/blackGreyWhite.html">Black, Grey &amp; White box penetration testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Scope/rules/rules.html">Rules of engagement &amp; Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Pentest/Enumeration/Enumeration.html">Enumeration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Enumeration/PassiveEnum/PassiveEnum.html">Passive information gathering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Enumeration/ActiveEnum/ActiveEnum.html">Active information gathering</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Pentest/Enumeration/ActiveEnum/NetEnum/NetEnum.html">Network Enumeration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Enumeration/OSINT/OSINT.html">OSInt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Pentest/Vulnerability/Vulnerability.html">Vulnerability, identification and assesment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Pentest/Exploitation/Exploitation.html">Exploitation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/Exploit/Exploit.html">Exploit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/TransfertExploit/TransfertExploit.html">Transferring the exploit to the target host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/ExploitVulnInPractice/ExploitVulnInPractice.html">Exploiting vulnerabilities in practice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/BypassSec/BypassSec.html">Bypass Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/PrivEsc/PrivEsc.html">Privilege Escalation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Pentest/Exploitation/PrivEsc/PriEscLinux/PriEscLinux.html">Privilege escalation - Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Pentest/Exploitation/PostExploit/PostExploit.html">Post Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Phishing/Phishing.html">Phishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Phishing/Scenario/Scenario.html">Scenario</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Report/Report.html">Document and Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Report/CVSS/CVSS.html">CVSS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Ressources/Ressources.html">Ressources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Ressources/Guides/Guides.html">Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Ressources/Blog/Blog.html">Blogs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/FlipperZero/FlipperZero.html">FlipperZero</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/LDAPBlog/LDAPBlog.html">LDAP - Blog and Cheat sheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/LinPirvEsc/LinPirvEsc.html">Linux Privilege Escalation - blog &amp; cookbook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/OSintBlog/OSintBlog.html">OSInt - Blogs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/WinPrivEsc/WinPrivEsc.html">Windows Privilege Escalation - blog &amp; cookbook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/Blog/WriteUp/WriteUp.html">Write-Up</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Ressources/SearchEngine/SearchEngine.html">Search Engines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ressources/SearchEngine/OSIntSearchEngine/OSIntSearchEngine.html">OSInt - Search Engine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../WebApplicationsPentest/WebApplicationsPentest.html">Web Applications Pentest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/WebTechnics.html">Web Applications Pentest - Technics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/serverSide.html">Server-Side</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/pathTraversal/pathTraversal.html">Path Traversal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/accessControl/accessControl.html">Access Control</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/AuthenticationVuln/AuthenticationVuln.html">Authentication vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/SSRF/SSRF.html">Server-Side Request Forgery</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/fileUploadVuln/fileUploadVuln.html">File Upload Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/OSCmdInjec/OSCmdInjec.html">OS command injection (AKA : shell injection)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/SQLInjection/SQLInjection.html">SQL Injection (SQLi)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/NoSQLi/NoSQLi.html">NoSQL injection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/NoSQLi/NoSQLi_syntax/NoSQLi_syntax.html">NoSQL - Syntax Injection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../WebApplicationsPentest/WebTechnics/serverSide/NoSQLi/NoSQLi_operator/NoSQLi_operator.html">NoSQL - Operator Injection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Technics/Technics.html">Technics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Technics/Fuzzing/Fuzzing.html">Fuzzing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Toolbox/Toolbox.html">Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/BrowserExt/BrowserExt.html">Browser Extensions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/BrowserExt/BuiltwithTechProf/BuiltwithTechProf.html">BuiltWith Technology Profiler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/BrowserExt/OWASPPenTestKit/OWASPPenTestKit.html">OWASP Penetration Testing Kit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/BrowserExt/TruffleHog/TruffleHog.html">TruffleHog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/BrowserExt/Whatruns/Whatruns.html">WhatRuns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/BrowserExt/YeswehackVDPFinder/YeswehackVDPFinder.html">Weblinks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/BurpSuite/BurpSuite.html">BurpSuite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Certutil/Certutil.html">Certutil.exe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/CeWL/CeWL.html">CeWL - Custom Word List generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/CrossLinked/CrossLinked.html">CrossLinked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/DockerInUrl/DockerInUrl.html">Docker-Inurlbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Exegol/Exegol.html">Exegol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Ffuf/Ffuf.html">ffuf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/GoAD/GoAD.html">Game of Active Directory (GoAD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Gophish/Gophish.html">Gophish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Hoaxshell/Hoaxshell.html">Hoaxshell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/JohnTheRipper/JohnTheRipper.html">John the Ripper password cracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/LDAPMonitor/LDAPMonitor.html">LDAPMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/LinPEAS/LinPEAS.html">LinPEAS – Linux Privilege Escalation Awesome Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/MailHog/MailHog.html">MailHog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Metasploit/Metasploit.html">Metasploit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Metasploit/Meterpreter/Meterpreter.html">Meterpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Metasploit/Msfvenom/Msfvenom.html">Msfvenom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Netcat/Netcat.html">Netcat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Netcat/ncWebServer/ncWebServer.html">Netcat - Web Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/NetCmd/NetCmd.html">Net Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Nmap/Nmap.html">Nmap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Nmap/hostDiscovery/hostDiscovery.html">Host Discovery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Nmap/nmapPortScan/nmapPortScan.html">Nmap Port Scanning Techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Nmap/Fingerprint/Fingerprint.html">Fingerprinting services and operating systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Nmap/NmapScripEngine/NmapScripEngine.html">Namp Script Engine (NSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Nmap/outputData/outputData.html">Output Data to files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/OsintTools/OsintTools.html">OSInt Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Owasp_ZAP/Owasp_ZAP.html">ZAP (owasp)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Payload/Payload.html">Payload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Powershell/Powershell.html">Powershell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Powershell/psFileTransfert/psFileTransfert.html">PowerShell - File Transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Pwncat/Pwncat.html">Pwncat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Python/Python.html">Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/Python/pyWebServer/pyWebServer.html">Python - Web server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/PwnDocNg/PwnDocNg.html">PwnDoc-NG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Responder/Responder.html">Responder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/ReverseShell/ReverseShell.html">Reverse Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/RTTool/RTTool.html">Red Team Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/SploitScan/SploitScan.html">SploitScan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Searchsploit/Searchsploit.html">Searchsploit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/SystemCmd/SystemCmd.html">System commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/SysReptor/SysReptor.html">SysReptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/UnixPrivescCheck/UnixPrivescCheck.html">Unix-Privesc-Check</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/VBSript/VBSript.html">VBSript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/wget/wget.html">wget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Wireshark/Wireshark.html">Wireshark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Toolbox/Wordlist/Wordlist.html">Wordlist / Dictionary</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Toolbox/CeWL/CeWL.html">CeWL - Custom Word List generator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../HackTheBox/HackTheBox.html">Hack The Box</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../../CyberSec.html">Cyber Security</a></li>
+            <li class="breadcrumb-item"><a href="../../WebRequests.html">Web Requests</a></li>
+            <li class="breadcrumb-item"><a href="../HTTP.html">HyperText Transfer Protocol - HTTP</a></li>
+        <li class="breadcrumb-item active" aria-current="page">HTTP Headers</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="ahd-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ahdcreative/sphinx_ahd_theme/blob/main/docs/CyberSec/WebRequests/HTTP/Headers/Headers.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="../../../../_sources/CyberSec/WebRequests/HTTP/Headers/Headers.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main">
+<section id="http-headers">
+<h1><a class="toc-backref" href="#contents" role="doc-backlink">HTTP Headers</a><a class="headerlink" href="#http-headers" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
+<span id="index-0"></span><p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#http-headers" id="id3">HTTP Headers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#general-headers" id="id4">General Headers</a></p></li>
+<li><p><a class="reference internal" href="#entity-headers" id="id5">Entity Headers</a></p></li>
+<li><p><a class="reference internal" href="#request-headers" id="id6">Request Headers</a></p></li>
+<li><p><a class="reference internal" href="#response-headers" id="id7">Response Headers</a></p></li>
+<li><p><a class="reference internal" href="#security-headers" id="id8">Security Headers</a></p></li>
+<li><p><a class="reference internal" href="#weblinks" id="id9">Weblinks</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr class="docutils" />
+<p>Some headers are only used with either requests or responses, while some other general headers are
+common to both.</p>
+<p>Headers can have one or multiple values, appended after the header name and separated by a colon.</p>
+<p>We can divide headers into the following categories:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>General headers</p></li>
+<li><p>Entity headers</p></li>
+<li><p>Request headers</p></li>
+<li><p>Response headers</p></li>
+<li><p>security headers</p></li>
+</ol>
+</div></blockquote>
+<hr class="docutils" />
+<section id="general-headers">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">General Headers</a><a class="headerlink" href="#general-headers" title="Permalink to this heading">¶</a></h2>
+<p><strong>General headers</strong> are used in both HTTP requests and responses. They are contextual and are
+<strong>used to describe the message</strong> rather than its contents.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Date</strong> : Holds the date and time at which the message originated. It’s preferred to convert
+the time to the standard UTC time zone.</p>
+<blockquote>
+<div><p>ex: Date: Wed, 16 Feb 2022 08:12:31 GMT</p>
+</div></blockquote>
+</li>
+<li><p><strong>Connexion</strong> : Dictates if the current network connection should stay alive after the request
+finishes.</p>
+<p>Two commonly used values for this header are close and keep-alive. The close value from
+either the client or server means that they would like to terminate the connection, while
+the keep-alive header indicates that the connection should remain open to receive more data
+and input.</p>
+<blockquote>
+<div><p>ex: Connection: close</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="entity-headers">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Entity Headers</a><a class="headerlink" href="#entity-headers" title="Permalink to this heading">¶</a></h2>
+<p>Similar to general headers, <strong>Entity Headers</strong> can be common to both the request and response.
+These headers are <strong>used to describe the content</strong> (entity) transferred by a message. They are
+usually found in responses and POST or PUT requests.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Content-Type</strong> : Used to describe the type of resource being transferred. The value is
+automatically added by the browsers on the client-side and returned in the server response.
+The <strong>charset</strong> field denotes the encoding standard, such as UTF-8.</p>
+<blockquote>
+<div><p>ex: Content-Type: text/html; charset=UTF-8</p>
+</div></blockquote>
+</li>
+<li><p><strong>Media-Type</strong> : Similar to the Content-Type header, and describes the data being
+transferred. This header can play a crucial role in making the server interpret our input.
+The <strong>charset</strong> field may also be used with this header.</p>
+<blockquote>
+<div><p>ex: Media-Type: application/pdf ; charset=UTF-8</p>
+</div></blockquote>
+</li>
+<li><p><strong>Boundary</strong> : Acts as a marker to separate content when there is more than one in the same
+message. For example, within a form data, this boundary gets used as –b4e4fbd93540 to
+separate different parts of the form.</p>
+<blockquote>
+<div><p>ex: Boundary=”b4e4fbd93540”</p>
+</div></blockquote>
+</li>
+<li><p><strong>Content-Length</strong> : Holds the size of the entity being passed. This header is necessary as
+the server uses it to read data from the message body, and is automatically generated by the
+browser and tools like cURL.</p>
+<blockquote>
+<div><p>ex: Content-Length: 385</p>
+</div></blockquote>
+</li>
+<li><p><strong>Content-Encoding</strong> : Data can undergo multiple transformations before being passed. For
+example, large amounts of data can be compressed to reduce the message size. The type of
+encoding being used should be specified using the Content-Encoding header.</p>
+<blockquote>
+<div><p>ex: Content-Encoding: gzip</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="request-headers">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Request Headers</a><a class="headerlink" href="#request-headers" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Liens Web</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5">Request Header Fields</a> <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
+</div></blockquote>
+<p>The client sends <strong>Request Headers</strong> in an HTTP transaction. These headers are <strong>used in an HTTP
+request and do not relate to the content</strong> of the message.</p>
+<p>The following headers are commonly seen in HTTP requests :</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Host</strong> : Used to specify the host being queried for the resource. This can be a domain
+name or an IP address.</p>
+<p>HTTP servers can be configured to host different websites, which are revealed based on the
+hostname. <strong>This makes the host header an important enumeration target, as it can indicate the
+existence of other hosts on the target server</strong>.</p>
+<blockquote>
+<div><p>ex: Host: www.example.com</p>
+</div></blockquote>
+</li>
+<li><p><strong>User-Agent</strong> : The User-Agent header is used to describe the client requesting resources.
+This header can reveal a lot about the client, such as the browser, its version, and the
+operating system.</p>
+<blockquote>
+<div><p>ex: User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0</p>
+</div></blockquote>
+</li>
+<li><p><strong>Referer</strong> : Denotes where the current request is coming from. For example, clicking a link
+from Google search results would make <a class="reference external" href="https://google.com">https://google.com</a> the referer. Trusting this header
+can be dangerous as it can be easily manipulated, leading to unintended consequences.</p>
+<blockquote>
+<div><p>ex: Referer: <a class="reference external" href="https://google.com">https://google.com</a></p>
+</div></blockquote>
+</li>
+<li><p><strong>Accept</strong> : The Accept header describes which media types the client can understand. It can
+contain multiple media types separated by commas. The <em>`/`</em> value signifies that all media
+types are accepted.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ex: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,</dt><dd><p><em>/</em>; q=0.8</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p><strong>Cookie</strong> : Contains cookie-value pairs in the format <strong>name=value</strong>. A cookie is a piece of
+data stored on the client-side and on the server, which acts as an identifier. These are
+passed to the server per request, thus maintaining the client’s access. Cookies can also
+serve other purposes, such as saving user preferences or session tracking. There can be
+multiple cookies in a single header separated by a semi-colon.</p>
+<blockquote>
+<div><p>ex : Cookie: PHPSESSID=b4e4fbd93540</p>
+</div></blockquote>
+</li>
+<li><p><strong>Authorization</strong> : Another method for the server to identify clients. After successful
+authentication, the server returns a token unique to the client. Unlike cookies, tokens are
+stored only on the client-side and retrieved by the server per request. There are multiple
+types of authentication types based on the webserver and application type used.</p>
+<blockquote>
+<div><p>ex : Authorization: Basic YWRtaW46YWRtaW4=</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="response-headers">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Response Headers</a><a class="headerlink" href="#response-headers" title="Permalink to this heading">¶</a></h2>
+<p>Response Headers can be <strong>used in an HTTP response and do not relate to the content</strong>. Certain
+response headers such as Age, Location, and Server are used to provide more context about the
+response. The following headers are commonly seen in HTTP responses.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Server</strong> : Contains information about the HTTP server, which processed the request. <strong>It can
+be used to gain information about the server</strong>, such as its version, and enumerate it further.</p>
+<blockquote>
+<div><p>ex : Server: Apache/2.4.41 (Ubuntu)</p>
+</div></blockquote>
+</li>
+<li><p><strong>Age</strong> : Contains the time since the response was generated. This can be used to determine
+how long the response has been cached.</p>
+<blockquote>
+<div><p>ex : Age: 12</p>
+</div></blockquote>
+</li>
+<li><p><strong>Set-Cookie</strong> : Contains the cookies needed for client identification. Browsers parse the
+cookies and store them for future requests. This header follows the same format as the
+Cookie request header.</p>
+<blockquote>
+<div><p>ex : Set-Cookie: PHPSESSID=b4e4fbd93540; path=/; secure; httponly</p>
+</div></blockquote>
+</li>
+<li><p><strong>WWW-Authenticate</strong> : Notifies the client about the type of authentication required to
+access the requested resource.</p>
+<blockquote>
+<div><p>ex : WWW-Authenticate: Basic realm=”localhost”</p>
+</div></blockquote>
+</li>
+<li><p><strong>Location</strong> : Indicates the URL of the resource being redirected to. This header is used in
+HTTP responses with a 3xx status code.</p>
+<blockquote>
+<div><p>ex : Location: <a class="reference external" href="https://www.example.com/login">https://www.example.com/login</a></p>
+</div></blockquote>
+</li>
+<li><p><strong>Content-Type</strong> : Indicates the media type of the resource. It helps the client to determine
+how to process the response body.</p>
+<blockquote>
+<div><p>ex : Content-Type: text/html; charset=UTF-8</p>
+</div></blockquote>
+</li>
+<li><p><strong>Content-Length</strong> : Indicates the size of the response body in bytes.</p>
+<blockquote>
+<div><p>ex : Content-Length: 1024</p>
+</div></blockquote>
+</li>
+<li><p><strong>Cache-Control</strong> : Tells all caching mechanisms from server to client whether they should
+cache the response.</p>
+<blockquote>
+<div><p>ex : Cache-Control: max-age=3600</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="security-headers">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Security Headers</a><a class="headerlink" href="#security-headers" title="Permalink to this heading">¶</a></h2>
+<p>Finally, we have Security Headers. With the increase in the variety of browsers and web-based
+attacks, defining certain headers that enhanced security was necessary. HTTP Security headers are
+<strong>a class of response headers used to specify certain rules and policies</strong> to be followed by the
+browser while accessing the website.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Content-Security-Policy</strong> : Dictates the website’s policy towards externally injected
+resources. This could be JavaScript code as well as script resources. This header instructs
+the browser to accept resources only from certain trusted domains, hence preventing attacks
+such as <strong>Cross-site scripting (XSS)</strong>.</p>
+<blockquote>
+<div><p>ex : Content-Security-Policy: default-src’self’ *.example.com</p>
+</div></blockquote>
+</li>
+<li><p><strong>Strict-Transport-Security</strong> : Prevents the browser from accessing the website over the
+plaintext HTTP protocol, and forces all communication to be carried over the secure HTTPS
+protocol. This prevents attackers from sniffing web traffic and accessing protected
+information such as passwords or other sensitive data.</p>
+<blockquote>
+<div><p>ex : Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</p>
+</div></blockquote>
+</li>
+<li><p><strong>Referrer-Policy</strong> : Dictates whether the browser should include the value specified via
+the Referer header or not. It can help in avoiding disclosing sensitive URLs and information
+while browsing the website.</p>
+<blockquote>
+<div><p>ex : Referrer-Policy: origin</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="weblinks">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Weblinks</a><a class="headerlink" href="#weblinks" title="Permalink to this heading">¶</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5">https://datatracker.ietf.org/doc/html/rfc7231#section-5</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="../ReqResp/ReqResp.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>HTTP Requests and Responses
+    </a>
+    <a class="float-right" href="../Methods/Methods.html" title="Next">
+        HTTP Methods and Codes <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">HTTP Headers</a><ul>
+<li><a class="reference internal" href="#general-headers">General Headers</a></li>
+<li><a class="reference internal" href="#entity-headers">Entity Headers</a></li>
+<li><a class="reference internal" href="#request-headers">Request Headers</a></li>
+<li><a class="reference internal" href="#response-headers">Response Headers</a></li>
+<li><a class="reference internal" href="#security-headers">Security Headers</a></li>
+<li><a class="reference internal" href="#weblinks">Weblinks</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/ahdcreative/sphinx_ahd_theme" rel="nofollow" target="_blank">
+                        AHDCreative Sphinx Theme 5.3.8
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Poltergeist42
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script type="text/javascript" src="../../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            jQuery(function() { Search.loadIndex("../../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>
