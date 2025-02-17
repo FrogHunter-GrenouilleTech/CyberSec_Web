@@ -468,7 +468,57 @@ the exploitation of the vulnerability.</p>
 </div>
 </div></blockquote>
 <blockquote>
-<div></div></blockquote>
+<div><div class="note admonition">
+<p class="admonition-title">💻 <strong>Code Snipet</strong></p>
+<blockquote>
+<div><p>This command provide a clean shell but with :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>no tab completion</p></li>
+<li><p>no history</p></li>
+<li><p>no [CTRL]-c</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">  </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import pty; pty.spawn(&#39;/bin/bash&#39;)&quot;</span>
+</pre></div>
+</div>
+<p>After we run this command, we will hit ctrl+z to background our shell and get back on our
+local terminal, and input the following stty command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">  </span>www-data@remotehost$<span class="w"> </span>^Z
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="w">  </span>FrogHunter95@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>stty<span class="w"> </span>raw<span class="w"> </span>-echo
+<span class="linenos">4</span><span class="w">  </span>FrogHunter95@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span><span class="nb">fg</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="w">  </span><span class="o">[</span>Enter<span class="o">]</span>
+<span class="linenos">7</span><span class="w">  </span><span class="o">[</span>Enter<span class="o">]</span>
+<span class="linenos">8</span><span class="w">  </span>www-data@remotehost$
+</pre></div>
+</div>
+<p>We may notice that our shell does not cover the entire terminal. To fix this, we need to
+figure out a few variables. We can <strong>open another terminal window on our system</strong>, maximize
+the windows or use any size we want, and then input the following commands to get our
+variables:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">  </span>FrogHunter95@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$TERM</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="w">  </span>xterm-256color
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="w">  </span>FrogHunter95@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>stty<span class="w"> </span>size
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="w">  </span><span class="m">67</span><span class="w"> </span><span class="m">318</span>
+</pre></div>
+</div>
+<p>The first command showed us the <strong>TERM variable</strong>, and the second shows us the values for
+<strong>rows and columns</strong>, respectively. Now that we have our variables, we can <strong>go back to our
+netcat shell</strong> and use the following command to correct them:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">  </span>www-data@remotehost$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="w">  </span>www-data@remotehost$<span class="w"> </span>stty<span class="w"> </span>rows<span class="w"> </span><span class="m">67</span><span class="w"> </span>columns<span class="w"> </span><span class="m">318</span>
+</pre></div>
+</div>
+<p>Once we do that, we should have a netcat shell that uses the terminal’s full features, just like an SSH connection.</p>
+</div></blockquote>
+</div>
+</div></blockquote>
 </section>
 <hr class="docutils" />
 <section id="weblinks">
